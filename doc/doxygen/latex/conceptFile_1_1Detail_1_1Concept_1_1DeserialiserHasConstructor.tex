@@ -1,0 +1,18 @@
+\doxysection{File\+::Detail\+::Concept\+::Deserialiser\+Has\+Constructor Concept Reference}
+\hypertarget{conceptFile_1_1Detail_1_1Concept_1_1DeserialiserHasConstructor}{}\label{conceptFile_1_1Detail_1_1Concept_1_1DeserialiserHasConstructor}\index{File::Detail::Concept::DeserialiserHasConstructor@{File::Detail::Concept::DeserialiserHasConstructor}}
+
+
+{\ttfamily \#include $<$stream.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1DeserialiserHasConstructor}{File::Detail::Concept::DeserialiserHasConstructor}}\ =\ \ }
+\DoxyCodeLine{\ \ HasTarget\ \ \ \ \ <T>\ \&\&\ }
+\DoxyCodeLine{\ \ HasUsedEndian\ <T>\ \&\&\ }
+\DoxyCodeLine{\ \ \textcolor{keyword}{requires}(T::Target\ \&target,\ \mbox{\hyperlink{classFile_1_1Stream}{Stream<T::UsedEndian>}}\ \&stream)\ \{}
+\DoxyCodeLine{\ \ \ \ T(target,\ stream);\ }
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structFile_1_1Detail_1_1Concept_1_1Array__Struct" kind="struct" language="C++" prot="public">
+    <compoundname>File::Detail::Concept::Array_Struct</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">std::false_type</basecompoundref>
+    <includes refid="stream_8h" local="no">stream.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>File::Detail::Concept::Array_Struct&lt; T &gt;</label>
+        <link refid="structFile_1_1Detail_1_1Concept_1_1Array__Struct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::false_type</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>File::Detail::Concept::Array_Struct&lt; T &gt;</label>
+        <link refid="structFile_1_1Detail_1_1Concept_1_1Array__Struct"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>std::false_type</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/file/stream.h" line="153" column="1" bodyfile="include/file/stream.h" bodystart="154" bodyend="154"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+\doxysection{File\+::Detail\+::Concept\+::Has\+External\+Serialiser\+Impl Concept Reference}
+\hypertarget{conceptFile_1_1Detail_1_1Concept_1_1HasExternalSerialiserImpl}{}\label{conceptFile_1_1Detail_1_1Concept_1_1HasExternalSerialiserImpl}\index{File::Detail::Concept::HasExternalSerialiserImpl@{File::Detail::Concept::HasExternalSerialiserImpl}}
+
+
+{\ttfamily \#include $<$stream.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ E,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasExternalSerialiserImpl}{File::Detail::Concept::HasExternalSerialiserImpl}}\ =\ \ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{\ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1SerialiserImpl}{SerialiserImpl<Serialiser<T,\ E>}},\ A...>;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

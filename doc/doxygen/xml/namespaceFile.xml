@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="namespaceFile" kind="namespace" language="C++">
+    <compoundname>File</compoundname>
+    <innerclass refid="structFile_1_1Deserialiser" prot="public">File::Deserialiser</innerclass>
+    <innerclass refid="classFile_1_1Error" prot="public">File::Error</innerclass>
+    <innerclass refid="classFile_1_1ReadError" prot="public">File::ReadError</innerclass>
+    <innerclass refid="structFile_1_1Serialiser" prot="public">File::Serialiser</innerclass>
+    <innerclass refid="classFile_1_1Stream" prot="public">File::Stream</innerclass>
+    <innerclass refid="classFile_1_1StreamError" prot="public">File::StreamError</innerclass>
+    <innerclass refid="structFile_1_1StreamReadFailure" prot="public">File::StreamReadFailure</innerclass>
+    <innernamespace refid="namespaceFile_1_1Detail">File::Detail</innernamespace>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Endian</name>
+        <qualifiedname>File::Endian</qualifiedname>
+        <enumvalue id="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8dad491538da818a2ba11a3195ba035cfd3" prot="public">
+          <name>Big</name>
+          <initializer>= std::to_underlying(std::endian::big)</initializer>
+          <briefdescription>
+<para>Big-endian format. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8da0f9197b3e286a7522984831949087332" prot="public">
+          <name>Little</name>
+          <initializer>= std::to_underlying(std::endian::little)</initializer>
+          <briefdescription>
+<para>Little-endian format. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8da925641e0b76c28cc940e8f3ca178d826" prot="public">
+          <name>Native</name>
+          <initializer>= std::to_underlying(std::endian::native)</initializer>
+          <briefdescription>
+<para>Native endianness of the system. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Specifies the endianness for data streaming. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="43" column="1" bodyfile="include/file/stream.h" bodystart="43" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceFile_1a61e2697173136ada4e112bade4fbfa77" prot="public" static="no">
+        <type>std::span&lt; const <ref refid="namespaceFile_1ae0165bddbfc987f33baa2bb72a4ccaab" kindref="member">Byte</ref> &gt;</type>
+        <definition>using File::ByteSpan =  std::span&lt;const Byte&gt;</definition>
+        <argsstring></argsstring>
+        <name>ByteSpan</name>
+        <qualifiedname>File::ByteSpan</qualifiedname>
+        <briefdescription>
+<para>A span of constant bytes, used for reading data. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="29" column="1" bodyfile="include/file/stream.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceFile_1ae0165bddbfc987f33baa2bb72a4ccaab" prot="public" static="no">
+        <type>std::uint8_t</type>
+        <definition>using File::Byte =  std::uint8_t</definition>
+        <argsstring></argsstring>
+        <name>Byte</name>
+        <qualifiedname>File::Byte</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/type.h" line="10" column="1" bodyfile="include/file/type.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceFile_1aaa657f08e5829038ef1ecca83936eb67" prot="public" static="no">
+        <type>std::vector&lt; std::uint8_t &gt;</type>
+        <definition>using File::ByteSequence =  std::vector&lt;std::uint8_t&gt;</definition>
+        <argsstring></argsstring>
+        <name>ByteSequence</name>
+        <qualifiedname>File::ByteSequence</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/type.h" line="11" column="1" bodyfile="include/file/type.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceFile_1a08f1d1ec3c6e1869bb722ed9eebb52e1" prot="public" static="no">
+        <type>std::shared_ptr&lt; <ref refid="namespaceFile_1aaa657f08e5829038ef1ecca83936eb67" kindref="member">ByteSequence</ref> &gt;</type>
+        <definition>using File::ByteSequenceShared =  std::shared_ptr&lt;ByteSequence&gt;</definition>
+        <argsstring></argsstring>
+        <name>ByteSequenceShared</name>
+        <qualifiedname>File::ByteSequenceShared</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/type.h" line="12" column="1" bodyfile="include/file/type.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceFile_1ad41b3c50fa291dc63cc956d374029325" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>auto</type>
+        <definition>auto File::Read</definition>
+        <argsstring></argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Read</qualifiedname>
+        <initializer>= <ref refid="classFile_1_1Detail_1_1ReadFunction" kindref="compound">Detail::ReadFunction</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/read.h" line="74" column="23" bodyfile="include/file/read.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/file/error.h" line="6" column="1"/>
+  </compounddef>
+</doxygen>

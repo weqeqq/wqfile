@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Template Class Stream &#8212; file-cpp 0.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css?v=27fed22d" />
+    <link rel="stylesheet" type="text/css" href="../_static/collapsible-lists/css/tree_view.css?v=a885cde7" />
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/collapsible-lists/js/CollapsibleLists.compressed.js?v=73120307"></script>
+    <script src="../_static/collapsible-lists/js/apply-collapsible-lists.js?v=660e4f45"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Class StreamError" href="classFile_1_1StreamError.html" />
+    <link rel="prev" title="Template Class Serialiser" href="class_structFile_1_1Serialiser.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="template-class-stream">
+<span id="exhale-class-classfile-1-1stream"></span><h1>Template Class Stream<a class="headerlink" href="#template-class-stream" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_file_stream.h.html#file-include-file-stream-h"><span class="std std-ref">File stream.h</span></a></p></li>
+</ul>
+<section id="class-documentation">
+<h2>Class Documentation<a class="headerlink" href="#class-documentation" title="Link to this heading">¶</a></h2>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I_6EndianEN4File6StreamE">
+<span id="_CPPv3I_6EndianEN4File6StreamE"></span><span id="_CPPv2I_6EndianEN4File6StreamE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><a class="reference internal" href="enum_namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d.html#_CPPv4N4File6EndianE" title="File::Endian"><span class="n"><span class="pre">Endian</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">E</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="enum_namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d.html#_CPPv4N4File6EndianE" title="File::Endian"><span class="n"><span class="pre">Endian</span></span></a><span class="p"><span class="pre">::</span></span><a class="reference internal" href="enum_namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d.html#_CPPv4N4File6Endian6NativeE" title="File::Endian::Native"><span class="n"><span class="pre">Native</span></span></a><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Stream</span></span></span><a class="headerlink" href="#_CPPv4I_6EndianEN4File6StreamE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>A stream class for reading and writing data with specified endianness. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>E</strong> – The endianness to use for the stream. Defaults to <a class="reference internal" href="enum_namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d.html#namespaceFile_1aef8a42b3ab2cd380273518b701b15e8da925641e0b76c28cc940e8f3ca178d826"><span class="std std-ref">Endian::Native</span></a>. </p>
+</dd>
+</dl>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-functions">Public Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4File6Stream6StreamEv">
+<span id="_CPPv3N4File6Stream6StreamEv"></span><span id="_CPPv2N4File6Stream6StreamEv"></span><span id="File::Stream::Stream"></span><span class="target" id="classFile_1_1Stream_1a2ae56a895d6e91c9e40fea8af3d3a789"></span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Stream</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="k"><span class="pre">default</span></span><a class="headerlink" href="#_CPPv4N4File6Stream6StreamEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Default constructor. </p>
+<p>Creates an empty stream. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4File6Stream6StreamE12ByteSequence">
+<span id="_CPPv3N4File6Stream6StreamE12ByteSequence"></span><span id="_CPPv2N4File6Stream6StreamE12ByteSequence"></span><span id="File::Stream::Stream__ByteSequence"></span><span class="target" id="classFile_1_1Stream_1a27c67ca23d14794ce2d091ff99112c82"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Stream</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="typedef_namespaceFile_1aaa657f08e5829038ef1ecca83936eb67.html#_CPPv4N4File12ByteSequenceE" title="File::ByteSequence"><span class="n"><span class="pre">ByteSequence</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">data</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4File6Stream6StreamE12ByteSequence" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Constructor from a byte sequence. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>data</strong> – The byte sequence to use for the stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4File6Stream6StreamERKNSt6stringE">
+<span id="_CPPv3N4File6Stream6StreamERKNSt6stringE"></span><span id="_CPPv2N4File6Stream6StreamERKNSt6stringE"></span><span id="File::Stream::Stream__ssCR"></span><span class="target" id="classFile_1_1Stream_1a8208cd5ce51395388ee51725b35650df"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="k"><span class="pre">explicit</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Stream</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">string</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">filename</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4File6Stream6StreamERKNSt6stringE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Constructor from a file. </p>
+<p>Reads the file and uses its contents as the stream data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>filename</strong> – The name of the file to read. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0DpEN4File6Stream4ReadE1TDpRR1A">
+<span id="_CPPv3I0DpEN4File6Stream4ReadEDpRR1A"></span><span id="_CPPv2I0DpEN4File6Stream4ReadEDpRR1A"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">A</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1a3ff83d551519265b23d953df8032b8eb"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0DpEN4File6Stream4ReadE1TDpRR1A" title="File::Stream::Read::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN4File6Stream4ReadE1TDpRR1A" title="File::Stream::Read::A"><span class="n"><span class="pre">A</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN4File6Stream4ReadE1TDpRR1A" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Deserialises an object from the stream using either internal or external deserialisation. </p>
+<p>This method provides a unified interface for reading objects that may implement deserialisation through either:<ol class="lowerroman simple">
+<li><p>An internal <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Deserialiser.html#structFile_1_1Deserialiser"><span class="std std-ref"><span class="pre">Deserialiser</span></span></a></code> type (HasInternalDeserialiserImpl), or</p></li>
+<li><p>An external <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Deserialiser.html#structFile_1_1Deserialiser"><span class="std std-ref"><span class="pre">Deserialiser</span></span></a></code> specialization (HasExternalDeserialiserImpl)</p></li>
+</ol>
+</p>
+<p><dl>
+<dt><strong>Example (Internal Deserialiser):</strong></dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">struct</span> <span class="n">CustomType</span> <span class="p">{</span>
+
+  <span class="n">template</span><span class="o">&lt;</span><span class="n">Endian</span> <span class="n">E</span><span class="o">&gt;</span>
+  <span class="n">struct</span> <span class="n">Deserialiser</span> <span class="p">{</span>
+    <span class="n">explicit</span> <span class="n">Deserialiser</span><span class="p">(</span><span class="n">T</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+
+    <span class="n">void</span> <span class="n">operator</span><span class="p">()(</span><span class="nb">int</span><span class="p">);</span>
+  <span class="p">};</span>
+
+<span class="p">};</span>
+<span class="n">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">Read</span><span class="o">&lt;</span><span class="n">CustomType</span><span class="o">&gt;</span><span class="p">(</span><span class="mi">42</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+<dt><strong>Example (External Deserialiser):</strong></dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">template</span><span class="o">&lt;</span><span class="n">Endian</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="n">struct</span> <span class="n">Deserialiser</span><span class="o">&lt;</span><span class="n">OtherType</span><span class="p">,</span> <span class="n">E</span><span class="o">&gt;</span> <span class="p">{</span>
+
+  <span class="n">explicit</span> <span class="n">Deserialiser</span><span class="p">(</span><span class="n">OtherType</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+
+  <span class="n">void</span> <span class="n">operator</span><span class="p">()(</span><span class="n">double</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="n">auto</span> <span class="n">value</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">Read</span><span class="o">&lt;</span><span class="n">OtherType</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">3.14</span><span class="p">);</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method requires that either:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> provides an internal <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Deserialiser.html#structFile_1_1Deserialiser"><span class="std std-ref"><span class="pre">Deserialiser</span></span></a><span class="pre">&lt;UsedEndian&gt;</span></code> type constructible with <code class="docutils literal notranslate"><span class="pre">(T&amp;&amp;,</span> <a class="reference internal" href="#classFile_1_1Stream"><span class="std std-ref"><span class="pre">Stream</span></span></a><span class="pre">&lt;UsedEndian&gt;&amp;)</span></code> and callable with <code class="docutils literal notranslate"><span class="pre">args...</span></code>, OR</p></li>
+<li><p>There exists a <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Deserialiser.html#structFile_1_1Deserialiser"><span class="std std-ref"><span class="pre">Deserialiser</span></span></a><span class="pre">&lt;T,</span> <span class="pre">UsedEndian&gt;</span></code> specialization constructible with <code class="docutils literal notranslate"><span class="pre">(T&amp;&amp;,</span> <a class="reference internal" href="#classFile_1_1Stream"><span class="std std-ref"><span class="pre">Stream</span></span></a><span class="pre">&lt;UsedEndian&gt;&amp;)</span></code> and callable with <code class="docutils literal notranslate"><span class="pre">args...</span></code></p></li>
+</ul>
+</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The type T must be default constructible as this method creates a temporary which is then passed to the deserializer </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>T</strong> – The type of object to be deserialized (must be default constructible) </p></li>
+<li><p><strong>A</strong> – Additional argument types needed for the deserialisation process</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>args</strong> – Additional arguments to forward to the deserialiser </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The deserialised object of type T</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept6SimpleEEN4File6Stream4ReadE6Simplev">
+<span id="_CPPv3I_N6Detail7Concept6SimpleEEN4File6Stream4ReadEv"></span><span id="_CPPv2I_N6Detail7Concept6SimpleEEN4File6Stream4ReadEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Simple</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Simple</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1a6447dbb7e92159a11dae90b639caa020"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept6SimpleEEN4File6Stream4ReadE6Simplev" title="File::Stream::Read::Simple"><span class="n"><span class="pre">Simple</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept6SimpleEEN4File6Stream4ReadE6Simplev" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Reads a simple type from the stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Simple</strong> – The type to read, must be a simple type (integral or floating-point). </p>
+</dd>
+<dt class="field-even">Throws<span class="colon">:</span></dt>
+<dd class="field-even"><p><span><span class="cpp-expr sig sig-inline cpp"><a class="reference internal" href="classFile_1_1StreamError.html#_CPPv4N4File11StreamErrorE" title="File::StreamError"><span class="n">StreamError</span></a><span class="p">::</span><span class="n">ReadFailure</span></span></span> – If there is insufficient data in the stream. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The read value.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept8IterableEEN4File6Stream4ReadE8IterableRR8Iterable">
+<span id="_CPPv3I_N6Detail7Concept8IterableEEN4File6Stream4ReadERR8Iterable"></span><span id="_CPPv2I_N6Detail7Concept8IterableEEN4File6Stream4ReadERR8Iterable"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Iterable</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Iterable</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1aafbea46de84b9ab3822d0c1246ba2623"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept8IterableEEN4File6Stream4ReadE8IterableRR8Iterable" title="File::Stream::Read::Iterable"><span class="n"><span class="pre">Iterable</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept8IterableEEN4File6Stream4ReadE8IterableRR8Iterable" title="File::Stream::Read::Iterable"><span class="n"><span class="pre">Iterable</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">iterable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept8IterableEEN4File6Stream4ReadE8IterableRR8Iterable" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Reads data into an iterable container. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The elements of the iterable must be simple types. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Iterable</strong> – The type of the iterable container. </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>iterable</strong> – The container to read data into. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The iterable container.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept6StringEEN4File6Stream4ReadE6StringNSt8uint64_tE">
+<span id="_CPPv3I_N6Detail7Concept6StringEEN4File6Stream4ReadENSt8uint64_tE"></span><span id="_CPPv2I_N6Detail7Concept6StringEEN4File6Stream4ReadENSt8uint64_tE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">String</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">String</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1a623f867e1663398244e3262dcae808e6"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept6StringEEN4File6Stream4ReadE6StringNSt8uint64_tE" title="File::Stream::Read::String"><span class="n"><span class="pre">String</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept6StringEEN4File6Stream4ReadE6StringNSt8uint64_tE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Reads a string of specified length. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>String</strong> – The string type. </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>length</strong> – The length of the string to read. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The read string. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept6VectorEEN4File6Stream4ReadE6VectorNSt8uint64_tE">
+<span id="_CPPv3I_N6Detail7Concept6VectorEEN4File6Stream4ReadENSt8uint64_tE"></span><span id="_CPPv2I_N6Detail7Concept6VectorEEN4File6Stream4ReadENSt8uint64_tE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Vector</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Vector</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1ab026dca918f00ac9e6d6f3aa7e63d068"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept6VectorEEN4File6Stream4ReadE6VectorNSt8uint64_tE" title="File::Stream::Read::Vector"><span class="n"><span class="pre">Vector</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept6VectorEEN4File6Stream4ReadE6VectorNSt8uint64_tE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Reads a vector of specified length. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Vector</strong> – The vector type. </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>length</strong> – The number of elements to read. </p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The read vector. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept5ArrayEEN4File6Stream4ReadE5Arrayv">
+<span id="_CPPv3I_N6Detail7Concept5ArrayEEN4File6Stream4ReadEv"></span><span id="_CPPv2I_N6Detail7Concept5ArrayEEN4File6Stream4ReadEv"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Array</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Array</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1a93e767e6801ac025ebcf85dce6c500e1"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept5ArrayEEN4File6Stream4ReadE5Arrayv" title="File::Stream::Read::Array"><span class="n"><span class="pre">Array</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept5ArrayEEN4File6Stream4ReadE5Arrayv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Reads an array from the stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Array</strong> – The array type. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The read array. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept4SpanEEN4File6Stream4ReadE4SpanNSt8uint64_tE">
+<span id="_CPPv3I_N6Detail7Concept4SpanEEN4File6Stream4ReadENSt8uint64_tE"></span><span id="_CPPv2I_N6Detail7Concept4SpanEEN4File6Stream4ReadENSt8uint64_tE"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Span</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Span</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1a34586a620f4dc9290c641dbc230dff72"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept4SpanEEN4File6Stream4ReadE4SpanNSt8uint64_tE" title="File::Stream::Read::Span"><span class="n"><span class="pre">Span</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Read</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">length</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept4SpanEEN4File6Stream4ReadE4SpanNSt8uint64_tE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Reads a span of bytes from the stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>length</strong> – The number of bytes to read. </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A span pointing to the read bytes in the stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept6SimpleEEN4File6Stream5WriteEvRK6Simple">
+<span id="_CPPv3I_N6Detail7Concept6SimpleEEN4File6Stream5WriteERK6Simple"></span><span id="_CPPv2I_N6Detail7Concept6SimpleEEN4File6Stream5WriteERK6Simple"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Simple</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Simple</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1ad82d3b2fdf0c0b49c942a9040dfafe23"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept6SimpleEEN4File6Stream5WriteEvRK6Simple" title="File::Stream::Write::Simple"><span class="n"><span class="pre">Simple</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">simple</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept6SimpleEEN4File6Stream5WriteEvRK6Simple" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Writes a simple type to the stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Simple</strong> – The type to write, must be a simple type (integral or floating-point). </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>simple</strong> – The value to write. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I_N6Detail7Concept8IterableEEN4File6Stream5WriteEvRK8Iterable">
+<span id="_CPPv3I_N6Detail7Concept8IterableEEN4File6Stream5WriteERK8Iterable"></span><span id="_CPPv2I_N6Detail7Concept8IterableEEN4File6Stream5WriteERK8Iterable"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="n"><span class="pre">Detail</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Concept</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">Iterable</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Iterable</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1a4ca26708a076df559a225ad75c6be55b"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_N6Detail7Concept8IterableEEN4File6Stream5WriteEvRK8Iterable" title="File::Stream::Write::Iterable"><span class="n"><span class="pre">Iterable</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">iterable</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I_N6Detail7Concept8IterableEEN4File6Stream5WriteEvRK8Iterable" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Writes an iterable container to the stream. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The elements of the iterable must be simple types. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>Iterable</strong> – The type of the iterable container. </p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>iterable</strong> – The container to write.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4I0DpEN4File6Stream5WriteEvRK5InputDpRR4Args">
+<span id="_CPPv3I0DpEN4File6Stream5WriteERK5InputDpRR4Args"></span><span id="_CPPv2I0DpEN4File6Stream5WriteERK5InputDpRR4Args"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Input</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="sig-name descname"><span class="n"><span class="pre">Args</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="target" id="classFile_1_1Stream_1af4606e1b80626ec09a9d9631aff6f077"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Write</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I0DpEN4File6Stream5WriteEvRK5InputDpRR4Args" title="File::Stream::Write::Input"><span class="n"><span class="pre">Input</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">input</span></span>, <a class="reference internal" href="#_CPPv4I0DpEN4File6Stream5WriteEvRK5InputDpRR4Args" title="File::Stream::Write::Args"><span class="n"><span class="pre">Args</span></span></a><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">&amp;</span></span><span class="p"><span class="pre">...</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4I0DpEN4File6Stream5WriteEvRK5InputDpRR4Args" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Writes an object to the stream using either its internal or external serialisation. </p>
+<p>This method provides a unified interface for writing objects that may implement serialisation in one of two ways:<ol class="lowerroman simple">
+<li><p>Through an internal <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Serialiser.html#structFile_1_1Serialiser"><span class="std std-ref"><span class="pre">Serialiser</span></span></a></code> type (HasInternalSerialiserImpl)</p></li>
+<li><p>Through an external <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Serialiser.html#structFile_1_1Serialiser"><span class="std std-ref"><span class="pre">Serialiser</span></span></a></code> specialization (HasExternalSerialiserImpl)</p></li>
+</ol>
+</p>
+<p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">//</span> <span class="n">For</span> <span class="n">a</span> <span class="nb">type</span> <span class="k">with</span> <span class="n">internal</span> <span class="n">serialisation</span><span class="p">:</span>
+<span class="n">struct</span> <span class="n">CustomType</span> <span class="p">{</span>
+  <span class="n">template</span><span class="o">&lt;</span><span class="n">Endian</span> <span class="n">E</span><span class="o">&gt;</span>
+  <span class="n">struct</span> <span class="n">Serialiser</span> <span class="p">{</span>
+    
+    <span class="n">explicit</span> <span class="n">Serialiser</span><span class="p">(</span><span class="n">const</span> <span class="n">CustomType</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+
+    <span class="n">void</span> <span class="n">operator</span><span class="p">()(</span><span class="nb">int</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">CustomType</span><span class="p">(),</span> <span class="mi">42</span><span class="p">);</span>
+
+<span class="o">//</span> <span class="n">For</span> <span class="n">a</span> <span class="nb">type</span> <span class="k">with</span> <span class="n">external</span> <span class="n">serialisation</span><span class="p">:</span>
+<span class="n">template</span><span class="o">&lt;</span><span class="n">Endian</span> <span class="n">E</span><span class="o">&gt;</span>
+<span class="n">struct</span> <span class="n">Serialiser</span><span class="o">&lt;</span><span class="n">OtherType</span><span class="p">,</span> <span class="n">E</span><span class="o">&gt;</span> <span class="p">{</span>
+
+  <span class="n">explicit</span> <span class="n">Serialiser</span><span class="p">(</span><span class="n">const</span> <span class="n">OtherType</span><span class="o">&amp;</span><span class="p">,</span> <span class="n">Stream</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;&amp;</span><span class="p">);</span>
+
+  <span class="n">void</span> <span class="n">operator</span><span class="p">()(</span><span class="n">double</span><span class="p">);</span>
+<span class="p">};</span>
+<span class="n">stream</span><span class="o">.</span><span class="n">Write</span><span class="p">(</span><span class="n">OtherType</span><span class="p">(),</span> <span class="mf">3.14</span><span class="p">);</span>
+</pre></div>
+</div>
+ </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The method requires that either:<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Input</span></code> provides an internal <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Serialiser.html#structFile_1_1Serialiser"><span class="std std-ref"><span class="pre">Serialiser</span></span></a><span class="pre">&lt;UsedEndian&gt;</span></code> type constructible with <code class="docutils literal notranslate"><span class="pre">(const</span> <span class="pre">Input&amp;,</span> <a class="reference internal" href="#classFile_1_1Stream"><span class="std std-ref"><span class="pre">Stream</span></span></a><span class="pre">&lt;UsedEndian&gt;&amp;)</span></code> and callable with <code class="docutils literal notranslate"><span class="pre">args...</span></code>, OR</p></li>
+<li><p>There exists a <code class="docutils literal notranslate"><a class="reference internal" href="class_structFile_1_1Serialiser.html#structFile_1_1Serialiser"><span class="std std-ref"><span class="pre">Serialiser</span></span></a><span class="pre">&lt;Input,</span> <span class="pre">UsedEndian&gt;</span></code> specialization constructible with <code class="docutils literal notranslate"><span class="pre">(const</span> <span class="pre">Input&amp;,</span> <a class="reference internal" href="#classFile_1_1Stream"><span class="std std-ref"><span class="pre">Stream</span></span></a><span class="pre">&lt;UsedEndian&gt;&amp;)</span></code> and callable with <code class="docutils literal notranslate"><span class="pre">args...</span></code></p></li>
+</ul>
+</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Template Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>Input</strong> – The type of object to be serialized. </p></li>
+<li><p><strong>Args</strong> – Additional arguments needed for the serialization process.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>input</strong> – The object to be written to the stream. </p></li>
+<li><p><strong>args</strong> – Additional arguments to forward to the serialiser.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4File6Stream4TellEv">
+<span id="_CPPv3NK4File6Stream4TellEv"></span><span id="_CPPv2NK4File6Stream4TellEv"></span><span id="File::Stream::TellC"></span><span class="target" id="classFile_1_1Stream_1a7a8c16424d8dbccaa5930761a5a79bd3"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Tell</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4File6Stream4TellEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Gets the current position in the stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The current position. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4File6Stream7ReserveENSt8uint64_tE">
+<span id="_CPPv3N4File6Stream7ReserveENSt8uint64_tE"></span><span id="_CPPv2N4File6Stream7ReserveENSt8uint64_tE"></span><span id="File::Stream::Reserve__std::uint64_t"></span><span class="target" id="classFile_1_1Stream_1aa01093d0084e953531e9454381d1b60c"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Reserve</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">input</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4File6Stream7ReserveENSt8uint64_tE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Reserves space in the underlying container to accommodate at least the specified number of elements. </p>
+<p>This function ensures that the container has enough capacity to hold at least <code class="docutils literal notranslate"><span class="pre">input</span></code> elements without needing to reallocate memory. It preserves the position of the current iterator by calculating its offset from the container’s beginning, reserving the requested capacity, and then updating the iterator to point to the same logical position in the potentially reallocated container.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>input</strong> – The minimum number of elements for which to reserve space in the container. </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N4File6Stream4SeekENSt8uint64_tE">
+<span id="_CPPv3N4File6Stream4SeekENSt8uint64_tE"></span><span id="_CPPv2N4File6Stream4SeekENSt8uint64_tE"></span><span id="File::Stream::Seek__std::uint64_t"></span><span class="target" id="classFile_1_1Stream_1ab2fee215a8c3bf043e9f978b3d9efc92"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Seek</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">offset</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N4File6Stream4SeekENSt8uint64_tE" title="Link to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4NK4File6Stream6LengthEv">
+<span id="_CPPv3NK4File6Stream6LengthEv"></span><span id="_CPPv2NK4File6Stream6LengthEv"></span><span id="File::Stream::LengthC"></span><span class="target" id="classFile_1_1Stream_1a77d971a6a2418708ac79d1864ba1bff5"></span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">std</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">uint64_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Length</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><span class="w"> </span><span class="k"><span class="pre">const</span></span><a class="headerlink" href="#_CPPv4NK4File6Stream6LengthEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Gets the total length of the stream. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The length of the stream. </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-static-attributes">Public Static Attributes</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N4File6Stream10UsedEndianE">
+<span id="_CPPv3N4File6Stream10UsedEndianE"></span><span id="_CPPv2N4File6Stream10UsedEndianE"></span><span id="File::Stream::UsedEndian__Endian"></span><span class="target" id="classFile_1_1Stream_1acde58f4d92fc8bd8661b6bb015276ee7"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><a class="reference internal" href="enum_namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d.html#_CPPv4N4File6EndianE" title="File::Endian"><span class="n"><span class="pre">Endian</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">UsedEndian</span></span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv4I_6EndianEN4File6StreamE" title="File::Stream::E"><span class="n"><span class="pre">E</span></span></a><a class="headerlink" href="#_CPPv4N4File6Stream10UsedEndianE" title="Link to this definition">¶</a><br /></dt>
+<dd><p>The endianness used by this stream instance. </p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">file-cpp</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="root.html">file-cpp API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="root.html#class-hierarchy">Class Hierarchy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="root.html#file-hierarchy">File Hierarchy</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="root.html#full-api">Full API</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="root.html">file-cpp API</a><ul>
+      <li>Previous: <a href="class_structFile_1_1Serialiser.html" title="previous chapter">Template Class Serialiser</a></li>
+      <li>Next: <a href="classFile_1_1StreamError.html" title="next chapter">Class StreamError</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, weqeqq.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="../_sources/api/classFile_1_1Stream.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

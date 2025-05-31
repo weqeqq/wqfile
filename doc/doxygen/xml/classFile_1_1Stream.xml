@@ -1,0 +1,971 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="classFile_1_1Stream" kind="class" language="C++" prot="public">
+    <compoundname>File::Stream</compoundname>
+    <includes refid="stream_8h" local="no">stream.h</includes>
+    <templateparamlist>
+      <param>
+        <type><ref refid="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d" kindref="member">Endian</ref></type>
+        <declname>E</declname>
+        <defname>E</defname>
+        <defval><ref refid="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8da925641e0b76c28cc940e8f3ca178d826" kindref="member">Endian::Native</ref></defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classFile_1_1Stream_1acde58f4d92fc8bd8661b6bb015276ee7" prot="public" static="yes" constexpr="yes" mutable="no">
+        <type><ref refid="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d" kindref="member">Endian</ref></type>
+        <definition>Endian File::Stream&lt; E &gt;::UsedEndian</definition>
+        <argsstring></argsstring>
+        <name>UsedEndian</name>
+        <qualifiedname>File::Stream::UsedEndian</qualifiedname>
+        <initializer>= E</initializer>
+        <briefdescription>
+<para>The endianness used by this stream instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="250" column="27" bodyfile="include/file/stream.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classFile_1_1Stream_1a5586aa3bbda3d389712da8e6d344df54" prot="private" static="no" mutable="no">
+        <type>std::shared_ptr&lt; <ref refid="namespaceFile_1aaa657f08e5829038ef1ecca83936eb67" kindref="member">ByteSequence</ref> &gt;</type>
+        <definition>std::shared_ptr&lt;ByteSequence&gt; File::Stream&lt; E &gt;::data_</definition>
+        <argsstring></argsstring>
+        <name>data_</name>
+        <qualifiedname>File::Stream::data_</qualifiedname>
+        <initializer>= std::make_shared&lt;<ref refid="namespaceFile_1aaa657f08e5829038ef1ecca83936eb67" kindref="member">ByteSequence</ref>&gt;()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="551" column="19" bodyfile="include/file/stream.h" bodystart="551" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classFile_1_1Stream_1a2f135582a171e47d33a47d51a53dfd39" prot="private" static="no" mutable="no">
+        <type>ByteSequence::iterator</type>
+        <definition>ByteSequence::iterator File::Stream&lt; E &gt;::current_</definition>
+        <argsstring></argsstring>
+        <name>current_</name>
+        <qualifiedname>File::Stream::current_</qualifiedname>
+        <initializer>= data_-&gt;begin()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="552" column="26" bodyfile="include/file/stream.h" bodystart="552" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classFile_1_1Stream_1a2ae56a895d6e91c9e40fea8af3d3a789" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>File::Stream&lt; E &gt;::Stream</definition>
+        <argsstring>()=default</argsstring>
+        <name>Stream</name>
+        <qualifiedname>File::Stream::Stream</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates an empty stream. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="256" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a27c67ca23d14794ce2d091ff99112c82" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>File::Stream&lt; E &gt;::Stream</definition>
+        <argsstring>(ByteSequence data)</argsstring>
+        <name>Stream</name>
+        <qualifiedname>File::Stream::Stream</qualifiedname>
+        <param>
+          <type><ref refid="namespaceFile_1aaa657f08e5829038ef1ecca83936eb67" kindref="member">ByteSequence</ref></type>
+          <declname>data</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from a byte sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The byte sequence to use for the stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="262" column="12" bodyfile="include/file/stream.h" bodystart="262" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a8208cd5ce51395388ee51725b35650df" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>File::Stream&lt; E &gt;::Stream</definition>
+        <argsstring>(const std::string &amp;filename)</argsstring>
+        <name>Stream</name>
+        <qualifiedname>File::Stream::Stream</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+<para>Constructor from a file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the file and uses its contents as the stream data.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filename</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The name of the file to read. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="270" column="12" bodyfile="include/file/stream.h" bodystart="270" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a3ff83d551519265b23d953df8032b8eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>A</declname>
+            <defname>A</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>(A &amp;&amp;... args)</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <param>
+          <type>A &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>Detail::Concept::HasInternalDeserialiserImpl&lt;T, UsedEndian, A...&gt; || Detail::Concept::HasExternalDeserialiserImpl&lt;T, UsedEndian, A...&gt;    </requiresclause>
+        <briefdescription>
+<para>Deserialises an object from the stream using either internal or external deserialisation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method provides a unified interface for reading objects that may implement deserialisation through either:<orderedlist>
+<listitem><para>An internal <computeroutput><ref refid="structFile_1_1Deserialiser" kindref="compound">Deserialiser</ref></computeroutput> type (HasInternalDeserialiserImpl), or</para>
+</listitem><listitem><para>An external <computeroutput><ref refid="structFile_1_1Deserialiser" kindref="compound">Deserialiser</ref></computeroutput> specialization (HasExternalDeserialiserImpl)</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of object to be deserialized (must be default constructible) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>A</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional argument types needed for the deserialisation process</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments to forward to the deserialiser </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The deserialised object of type T</para>
+</simplesect>
+<simplesect kind="note"><para>The method requires that either:<itemizedlist>
+<listitem><para><computeroutput>T</computeroutput> provides an internal <computeroutput><ref refid="structFile_1_1Deserialiser" kindref="compound">Deserialiser</ref>&lt;UsedEndian&gt;</computeroutput> type constructible with <computeroutput>(T&amp;&amp;, <ref refid="classFile_1_1Stream" kindref="compound">Stream</ref>&lt;UsedEndian&gt;&amp;)</computeroutput> and callable with <computeroutput>args...</computeroutput>, OR</para>
+</listitem><listitem><para>There exists a <computeroutput><ref refid="structFile_1_1Deserialiser" kindref="compound">Deserialiser</ref>&lt;T, UsedEndian&gt;</computeroutput> specialization constructible with <computeroutput>(T&amp;&amp;, <ref refid="classFile_1_1Stream" kindref="compound">Stream</ref>&lt;UsedEndian&gt;&amp;)</computeroutput> and callable with <computeroutput>args...</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<simplesect kind="par"><title>Example (Internal Deserialiser):</title><para><programlisting><codeline><highlight class="keyword">struct<sp/></highlight><highlight class="normal">CustomType<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;Endian<sp/>E&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Deserialiser<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>Deserialiser(T&amp;,<sp/>Stream&lt;E&gt;&amp;);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>stream.Read&lt;CustomType&gt;(42);</highlight></codeline>
+</programlisting></para>
+</simplesect>
+<simplesect kind="par"><title>Example (External Deserialiser):</title><para><programlisting><codeline><highlight class="keyword">template</highlight><highlight class="normal">&lt;Endian<sp/>E&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Deserialiser&lt;OtherType,<sp/>E&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>Deserialiser(OtherType&amp;,<sp/>Stream&lt;E&gt;&amp;);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>stream.Read&lt;OtherType&gt;(3.14);</highlight></codeline>
+</programlisting></para>
+</simplesect>
+<simplesect kind="warning"><para>The type T must be default constructible as this method creates a temporary which is then passed to the deserializer </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="326" column="12" bodyfile="include/file/stream.h" bodystart="326" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a6447dbb7e92159a11dae90b639caa020" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Simple</type>
+            <declname>Simple</declname>
+            <defname>Simple</defname>
+          </param>
+        </templateparamlist>
+        <type>Simple</type>
+        <definition>Simple File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>()</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <briefdescription>
+<para>Reads a simple type from the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Simple</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to read, must be a simple type (integral or floating-point). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The read value.</para>
+</simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>StreamError::ReadFailure</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If there is insufficient data in the stream. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="338" column="17" bodyfile="include/file/stream.h" bodystart="338" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1aafbea46de84b9ab3822d0c1246ba2623" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Iterable</type>
+            <declname>Iterable</declname>
+            <defname>Iterable</defname>
+          </param>
+        </templateparamlist>
+        <type>Iterable</type>
+        <definition>Iterable File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>(Iterable &amp;&amp;iterable)</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <param>
+          <type>Iterable &amp;&amp;</type>
+          <declname>iterable</declname>
+        </param>
+        <briefdescription>
+<para>Reads data into an iterable container. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Iterable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the iterable container. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container to read data into. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The iterable container.</para>
+</simplesect>
+<simplesect kind="note"><para>The elements of the iterable must be simple types. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="365" column="19" bodyfile="include/file/stream.h" bodystart="365" bodyend="374"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a623f867e1663398244e3262dcae808e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::String</type>
+            <declname>String</declname>
+            <defname>String</defname>
+          </param>
+        </templateparamlist>
+        <type>String</type>
+        <definition>String File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>(std::uint64_t length)</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <param>
+          <type>std::uint64_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Reads a string of specified length. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>String</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The length of the string to read. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The read string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="383" column="17" bodyfile="include/file/stream.h" bodystart="383" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1ab026dca918f00ac9e6d6f3aa7e63d068" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Vector</type>
+            <declname>Vector</declname>
+            <defname>Vector</defname>
+          </param>
+        </templateparamlist>
+        <type>Vector</type>
+        <definition>Vector File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>(std::uint64_t length)</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <param>
+          <type>std::uint64_t</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Reads a vector of specified length. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Vector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The vector type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements to read. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The read vector. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="394" column="17" bodyfile="include/file/stream.h" bodystart="394" bodyend="396"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a93e767e6801ac025ebcf85dce6c500e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Array</type>
+            <declname>Array</declname>
+            <defname>Array</defname>
+          </param>
+        </templateparamlist>
+        <type>Array</type>
+        <definition>Array File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>()</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <briefdescription>
+<para>Reads an array from the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Array</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The array type. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The read array. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="404" column="16" bodyfile="include/file/stream.h" bodystart="404" bodyend="406"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a34586a620f4dc9290c641dbc230dff72" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Span</type>
+            <declname>Span</declname>
+            <defname>Span</defname>
+          </param>
+        </templateparamlist>
+        <type>Span</type>
+        <definition>Span File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>(std::uint64_t length)</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <param>
+          <type>std::uint64_t</type>
+          <declname>length</declname>
+        </param>
+    <requiresclause>std::same_as&lt;Span, ByteSpan&gt;    </requiresclause>
+        <briefdescription>
+<para>Reads a span of bytes from the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of bytes to read. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A span pointing to the read bytes in the stream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="415" column="15" bodyfile="include/file/stream.h" bodystart="415" bodyend="417"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1ad82d3b2fdf0c0b49c942a9040dfafe23" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Simple</type>
+            <declname>Simple</declname>
+            <defname>Simple</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void File::Stream&lt; E &gt;::Write</definition>
+        <argsstring>(const Simple &amp;simple)</argsstring>
+        <name>Write</name>
+        <qualifiedname>File::Stream::Write</qualifiedname>
+        <param>
+          <type>const Simple &amp;</type>
+          <declname>simple</declname>
+        </param>
+        <briefdescription>
+<para>Writes a simple type to the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Simple</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to write, must be a simple type (integral or floating-point). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>simple</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value to write. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="425" column="15" bodyfile="include/file/stream.h" bodystart="425" bodyend="438"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a4ca26708a076df559a225ad75c6be55b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Iterable</type>
+            <declname>Iterable</declname>
+            <defname>Iterable</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void File::Stream&lt; E &gt;::Write</definition>
+        <argsstring>(const Iterable &amp;iterable)</argsstring>
+        <name>Write</name>
+        <qualifiedname>File::Stream::Write</qualifiedname>
+        <param>
+          <type>const Iterable &amp;</type>
+          <declname>iterable</declname>
+        </param>
+        <briefdescription>
+<para>Writes an iterable container to the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Iterable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the iterable container. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The container to write.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The elements of the iterable must be simple types. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="448" column="15" bodyfile="include/file/stream.h" bodystart="448" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1af4606e1b80626ec09a9d9631aff6f077" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Input</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void File::Stream&lt; E &gt;::Write</definition>
+        <argsstring>(const Input &amp;input, Args &amp;&amp;... args)</argsstring>
+        <name>Write</name>
+        <qualifiedname>File::Stream::Write</qualifiedname>
+        <param>
+          <type>const Input &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>(Detail::Concept::HasInternalSerialiserImpl&lt;Input, UsedEndian, Args...&gt; || Detail::Concept::HasExternalSerialiserImpl&lt;Input, UsedEndian, Args...&gt;)    </requiresclause>
+        <briefdescription>
+<para>Writes an object to the stream using either its internal or external serialisation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This method provides a unified interface for writing objects that may implement serialisation in one of two ways:<orderedlist>
+<listitem><para>Through an internal <computeroutput><ref refid="structFile_1_1Serialiser" kindref="compound">Serialiser</ref></computeroutput> type (HasInternalSerialiserImpl)</para>
+</listitem><listitem><para>Through an external <computeroutput><ref refid="structFile_1_1Serialiser" kindref="compound">Serialiser</ref></computeroutput> specialization (HasExternalSerialiserImpl)</para>
+</listitem></orderedlist>
+</para>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>Input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of object to be serialized. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments needed for the serialization process.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object to be written to the stream. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional arguments to forward to the serialiser.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>The method requires that either:<itemizedlist>
+<listitem><para><computeroutput>Input</computeroutput> provides an internal <computeroutput><ref refid="structFile_1_1Serialiser" kindref="compound">Serialiser</ref>&lt;UsedEndian&gt;</computeroutput> type constructible with <computeroutput>(const Input&amp;, <ref refid="classFile_1_1Stream" kindref="compound">Stream</ref>&lt;UsedEndian&gt;&amp;)</computeroutput> and callable with <computeroutput>args...</computeroutput>, OR</para>
+</listitem><listitem><para>There exists a <computeroutput><ref refid="structFile_1_1Serialiser" kindref="compound">Serialiser</ref>&lt;Input, UsedEndian&gt;</computeroutput> specialization constructible with <computeroutput>(const Input&amp;, <ref refid="classFile_1_1Stream" kindref="compound">Stream</ref>&lt;UsedEndian&gt;&amp;)</computeroutput> and callable with <computeroutput>args...</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+</simplesect>
+<programlisting><codeline><highlight class="comment">//<sp/>For<sp/>a<sp/>type<sp/>with<sp/>internal<sp/>serialisation:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">CustomType<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;Endian<sp/>E&gt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Serialiser<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>Serialiser(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CustomType&amp;,<sp/>Stream&lt;E&gt;&amp;);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal">stream.Write(CustomType(),<sp/>42);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>For<sp/>a<sp/>type<sp/>with<sp/>external<sp/>serialisation:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;Endian<sp/>E&gt;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">Serialiser&lt;OtherType,<sp/>E&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>Serialiser(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>OtherType&amp;,<sp/>Stream&lt;E&gt;&amp;);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>operator()(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal">stream.Write(OtherType(),<sp/>3.14);</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="504" column="15" bodyfile="include/file/stream.h" bodystart="504" bodyend="506"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a7a8c16424d8dbccaa5930761a5a79bd3" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint64_t</type>
+        <definition>std::uint64_t File::Stream&lt; E &gt;::Tell</definition>
+        <argsstring>() const</argsstring>
+        <name>Tell</name>
+        <qualifiedname>File::Stream::Tell</qualifiedname>
+        <briefdescription>
+<para>Gets the current position in the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current position. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="512" column="17" bodyfile="include/file/stream.h" bodystart="512" bodyend="516"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1aa01093d0084e953531e9454381d1b60c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void File::Stream&lt; E &gt;::Reserve</definition>
+        <argsstring>(std::uint64_t input)</argsstring>
+        <name>Reserve</name>
+        <qualifiedname>File::Stream::Reserve</qualifiedname>
+        <param>
+          <type>std::uint64_t</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Reserves space in the underlying container to accommodate at least the specified number of elements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function ensures that the container has enough capacity to hold at least <computeroutput>input</computeroutput> elements without needing to reallocate memory. It preserves the position of the current iterator by calculating its offset from the container&apos;s beginning, reserving the requested capacity, and then updating the iterator to point to the same logical position in the potentially reallocated container.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The minimum number of elements for which to reserve space in the container. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="528" column="8" bodyfile="include/file/stream.h" bodystart="528" bodyend="536"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1ab2fee215a8c3bf043e9f978b3d9efc92" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void File::Stream&lt; E &gt;::Seek</definition>
+        <argsstring>(std::uint64_t offset)</argsstring>
+        <name>Seek</name>
+        <qualifiedname>File::Stream::Seek</qualifiedname>
+        <param>
+          <type>std::uint64_t</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="537" column="8" bodyfile="include/file/stream.h" bodystart="537" bodyend="541"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a77d971a6a2418708ac79d1864ba1bff5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::uint64_t</type>
+        <definition>std::uint64_t File::Stream&lt; E &gt;::Length</definition>
+        <argsstring>() const</argsstring>
+        <name>Length</name>
+        <qualifiedname>File::Stream::Length</qualifiedname>
+        <briefdescription>
+<para>Gets the total length of the stream. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The length of the stream. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="547" column="17" bodyfile="include/file/stream.h" bodystart="547" bodyend="549"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="classFile_1_1Stream_1a5d0c47aa972ee828b2eff1523ba18128" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>A</declname>
+            <defname>A</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>(T &amp;&amp;output, A &amp;&amp;... args)</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>A &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>Detail::Concept::HasInternalDeserialiserImpl&lt;T, UsedEndian, A...&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="556" column="12" bodyfile="include/file/stream.h" bodystart="556" bodyend="561"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1aa7f852143de85b79e4c573298489f1ff" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>A</declname>
+            <defname>A</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T File::Stream&lt; E &gt;::Read</definition>
+        <argsstring>(T &amp;&amp;output, A &amp;&amp;... args)</argsstring>
+        <name>Read</name>
+        <qualifiedname>File::Stream::Read</qualifiedname>
+        <param>
+          <type>T &amp;&amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>A &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>Detail::Concept::HasExternalDeserialiserImpl&lt;T, UsedEndian, A...&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="564" column="12" bodyfile="include/file/stream.h" bodystart="564" bodyend="569"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a21cd3e942fbe5b353dd40cff6e9facfd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Input</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void File::Stream&lt; E &gt;::Write</definition>
+        <argsstring>(const Input &amp;input, Args &amp;&amp;... args)</argsstring>
+        <name>Write</name>
+        <qualifiedname>File::Stream::Write</qualifiedname>
+        <param>
+          <type>const Input &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>Detail::Concept::HasInternalSerialiserImpl&lt;Input, UsedEndian, Args...&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="572" column="15" bodyfile="include/file/stream.h" bodystart="572" bodyend="576"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a738f5b1b4c826696f73a367f6a8657ea" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename Input</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>Args</declname>
+            <defname>Args</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void File::Stream&lt; E &gt;::Write</definition>
+        <argsstring>(const Input &amp;input, Args &amp;&amp;... args)</argsstring>
+        <name>Write</name>
+        <qualifiedname>File::Stream::Write</qualifiedname>
+        <param>
+          <type>const Input &amp;</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>Args &amp;&amp;...</type>
+          <declname>args</declname>
+        </param>
+    <requiresclause>Detail::Concept::HasExternalSerialiserImpl&lt;Input, UsedEndian, Args...&gt;    </requiresclause>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="579" column="15" bodyfile="include/file/stream.h" bodystart="579" bodyend="583"/>
+      </memberdef>
+      <memberdef kind="function" id="classFile_1_1Stream_1a01c7fa71e8070227a4a689cdeb9dd97e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>Detail::Concept::Simple</type>
+            <declname>Simple</declname>
+            <defname>Simple</defname>
+          </param>
+        </templateparamlist>
+        <type>std::uint64_t</type>
+        <definition>std::uint64_t File::Stream&lt; E &gt;::UpdateData</definition>
+        <argsstring>()</argsstring>
+        <name>UpdateData</name>
+        <qualifiedname>File::Stream::UpdateData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/stream.h" line="585" column="17" bodyfile="include/file/stream.h" bodystart="585" bodyend="593"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A stream class for reading and writing data with specified endianness. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>E</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The endianness to use for the stream. Defaults to <ref refid="namespaceFile_1aef8a42b3ab2cd380273518b701b15e8da925641e0b76c28cc940e8f3ca178d826" kindref="member">Endian::Native</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <location file="include/file/stream.h" line="49" column="1" bodyfile="include/file/stream.h" bodystart="245" bodyend="594"/>
+    <listofallmembers>
+      <member refid="classFile_1_1Stream_1a2f135582a171e47d33a47d51a53dfd39" prot="private" virt="non-virtual"><scope>File::Stream</scope><name>current_</name></member>
+      <member refid="classFile_1_1Stream_1a5586aa3bbda3d389712da8e6d344df54" prot="private" virt="non-virtual"><scope>File::Stream</scope><name>data_</name></member>
+      <member refid="classFile_1_1Stream_1a77d971a6a2418708ac79d1864ba1bff5" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Length</name></member>
+      <member refid="classFile_1_1Stream_1a3ff83d551519265b23d953df8032b8eb" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1a6447dbb7e92159a11dae90b639caa020" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1aafbea46de84b9ab3822d0c1246ba2623" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1a623f867e1663398244e3262dcae808e6" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1ab026dca918f00ac9e6d6f3aa7e63d068" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1a93e767e6801ac025ebcf85dce6c500e1" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1a34586a620f4dc9290c641dbc230dff72" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1a5d0c47aa972ee828b2eff1523ba18128" prot="private" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1aa7f852143de85b79e4c573298489f1ff" prot="private" virt="non-virtual"><scope>File::Stream</scope><name>Read</name></member>
+      <member refid="classFile_1_1Stream_1aa01093d0084e953531e9454381d1b60c" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Reserve</name></member>
+      <member refid="classFile_1_1Stream_1ab2fee215a8c3bf043e9f978b3d9efc92" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Seek</name></member>
+      <member refid="classFile_1_1Stream_1a2ae56a895d6e91c9e40fea8af3d3a789" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Stream</name></member>
+      <member refid="classFile_1_1Stream_1a27c67ca23d14794ce2d091ff99112c82" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Stream</name></member>
+      <member refid="classFile_1_1Stream_1a8208cd5ce51395388ee51725b35650df" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Stream</name></member>
+      <member refid="classFile_1_1Stream_1a7a8c16424d8dbccaa5930761a5a79bd3" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Tell</name></member>
+      <member refid="classFile_1_1Stream_1a01c7fa71e8070227a4a689cdeb9dd97e" prot="private" virt="non-virtual"><scope>File::Stream</scope><name>UpdateData</name></member>
+      <member refid="classFile_1_1Stream_1acde58f4d92fc8bd8661b6bb015276ee7" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>UsedEndian</name></member>
+      <member refid="classFile_1_1Stream_1ad82d3b2fdf0c0b49c942a9040dfafe23" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Write</name></member>
+      <member refid="classFile_1_1Stream_1a4ca26708a076df559a225ad75c6be55b" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Write</name></member>
+      <member refid="classFile_1_1Stream_1af4606e1b80626ec09a9d9631aff6f077" prot="public" virt="non-virtual"><scope>File::Stream</scope><name>Write</name></member>
+      <member refid="classFile_1_1Stream_1a21cd3e942fbe5b353dd40cff6e9facfd" prot="private" virt="non-virtual"><scope>File::Stream</scope><name>Write</name></member>
+      <member refid="classFile_1_1Stream_1a738f5b1b4c826696f73a367f6a8657ea" prot="private" virt="non-virtual"><scope>File::Stream</scope><name>Write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+\doxysection{File\+::Detail\+::Concept\+::Has\+Function\+Operator Concept Reference}
+\hypertarget{conceptFile_1_1Detail_1_1Concept_1_1HasFunctionOperator}{}\label{conceptFile_1_1Detail_1_1Concept_1_1HasFunctionOperator}\index{File::Detail::Concept::HasFunctionOperator@{File::Detail::Concept::HasFunctionOperator}}
+
+
+{\ttfamily \#include $<$stream.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasFunctionOperator}{File::Detail::Concept::HasFunctionOperator}}\ =\ \ \textcolor{keyword}{requires}(T\ input,\ A...\ args)\ \{}
+\DoxyCodeLine{\ \ \{\ input(args...)\ \}\ -\/>\ std::same\_as<void>;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

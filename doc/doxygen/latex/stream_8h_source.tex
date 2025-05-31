@@ -1,0 +1,341 @@
+\doxysection{stream.\+h}
+\hypertarget{stream_8h_source}{}\label{stream_8h_source}\index{include/file/stream.h@{include/file/stream.h}}
+\mbox{\hyperlink{stream_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#pragma\ once\ }}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <concepts>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <span>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <ranges>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <iterator>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{read_8h}{file/read.h}}>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <type\_traits>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <unicode/type.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <bit>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <file/export.h>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{type_8h}{file/type.h}}>}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <\mbox{\hyperlink{error_8h}{file/error.h}}>}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceFile}{File}}\ \{}
+\DoxyCodeLine{00029\ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespaceFile_a61e2697173136ada4e112bade4fbfa77}{ByteSpan}}\ =\ std::span<const\ Byte>;}
+\DoxyCodeLine{00043\ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ \{}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8dad491538da818a2ba11a3195ba035cfd3}{Big}}\ \ \ \ =\ std::to\_underlying(std::endian::big),}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8da0f9197b3e286a7522984831949087332}{Little}}\ =\ std::to\_underlying(std::endian::little),}
+\DoxyCodeLine{00046\ \ \ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8da925641e0b76c28cc940e8f3ca178d826}{Native}}\ =\ std::to\_underlying(std::endian::native)}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00054\ \textcolor{keyword}{template}\ <Endian\ E>}
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }Stream;}
+\DoxyCodeLine{00067\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ Endian\ E>}
+\DoxyCodeLine{00068\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Serialiser_acfb48b75fc32afa4113130e2094eb003}{Serialiser}}\ \{}
+\DoxyCodeLine{00069\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structFile_1_1Serialiser_aa805285a3739b4192c1d5e6c735fe948}{Target}}\ =\ T;\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ \mbox{\hyperlink{structFile_1_1Serialiser_af768af1740b3ff577c483d57bfd58cc2}{UsedEndian}}\ =\ E;}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structFile_1_1Serialiser_acfb48b75fc32afa4113130e2094eb003}{Serialiser}}(}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structFile_1_1Serialiser_aa805285a3739b4192c1d5e6c735fe948}{Target}}\ \&target,\ \mbox{\hyperlink{classFile_1_1Stream}{Stream<UsedEndian>}}\ \&stream}
+\DoxyCodeLine{00074\ \ \ )\ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}Serialiser\ not\ implemented"{}});}
+\DoxyCodeLine{00076\ \ \ \}}
+\DoxyCodeLine{00077\ \};}
+\DoxyCodeLine{00089\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ Endian\ E>}
+\DoxyCodeLine{00090\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Deserialiser_af3781fcfc451dbb19a7c224f5a766bd9}{Deserialiser}}\ \{}
+\DoxyCodeLine{00091\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00092\ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structFile_1_1Deserialiser_a9cb6c0916594a3bf59f1d878e76ad4d2}{Target}}\ =\ T;\ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ \mbox{\hyperlink{structFile_1_1Deserialiser_a4ae703228b3fbcbfc817040c103f62e0}{UsedEndian}}\ =\ E;}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structFile_1_1Deserialiser_af3781fcfc451dbb19a7c224f5a766bd9}{Deserialiser}}(}
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{structFile_1_1Deserialiser_a9cb6c0916594a3bf59f1d878e76ad4d2}{Target}}\ \&target,\ \mbox{\hyperlink{classFile_1_1Stream}{Stream<UsedEndian>}}\ \&stream}
+\DoxyCodeLine{00096\ \ \ )\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{static\_assert}(\textcolor{keyword}{false},\ \textcolor{stringliteral}{"{}Deserialiser\ not\ implemented"{}});}
+\DoxyCodeLine{00098\ \ \ \}}
+\DoxyCodeLine{00099\ \};}
+\DoxyCodeLine{00100\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFile_1_1StreamError_a355dfd1a7d5ad3de0bb6a9bff83602af}{StreamError}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classFile_1_1Error_af349939934578319f507885d445bc639}{Error}}\ \{}
+\DoxyCodeLine{00101\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classFile_1_1StreamError_a355dfd1a7d5ad3de0bb6a9bff83602af}{StreamError}}(}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&message}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \ \ )\ :\ \mbox{\hyperlink{classFile_1_1Error_af349939934578319f507885d445bc639}{Error}}(Namespace(\textcolor{stringliteral}{"{}StreamError"{}},\ message))\ \{\}\ }
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1StreamReadFailure_ac1468fe35e4205a643f6c766f193b1ad}{StreamReadFailure}}\ :\ \mbox{\hyperlink{classFile_1_1StreamError_a355dfd1a7d5ad3de0bb6a9bff83602af}{StreamError}}\ \{}
+\DoxyCodeLine{00108\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{structFile_1_1StreamReadFailure_ac1468fe35e4205a643f6c766f193b1ad}{StreamReadFailure}}(}
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&message\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ )\ :\ \mbox{\hyperlink{classFile_1_1StreamError_a355dfd1a7d5ad3de0bb6a9bff83602af}{StreamError}}(Message(\textcolor{stringliteral}{"{}ReadFailure"{}},\ message))\ \{\}}
+\DoxyCodeLine{00112\ \};}
+\DoxyCodeLine{00113\ \textcolor{keyword}{namespace\ }Detail\ \{}
+\DoxyCodeLine{00114\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceFile_1_1Detail_1_1Concept}{Concept}}\ \{}
+\DoxyCodeLine{00119\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00120\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1Simple}{Simple}}\ =\ }
+\DoxyCodeLine{00121\ \ \ std::is\_integral\_v\ \ \ \ \ \ \ <T>\ ||}
+\DoxyCodeLine{00122\ \ \ std::is\_floating\_point\_v\ <T>;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00125\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Vector__Struct}{Vector\_Struct}}\ }
+\DoxyCodeLine{00126\ \ \ :\ std::false\_type\ \{\};}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00129\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Vector__Struct}{Vector\_Struct}}<std::vector<T>>\ }
+\DoxyCodeLine{00130\ \ \ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{00135\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00136\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1Vector}{Vector}}\ =\ \mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Vector__Struct}{Vector\_Struct<T>::value}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00139\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1String__Struct}{String\_Struct}}\ }
+\DoxyCodeLine{00140\ \ \ :\ std::false\_type\ \{\};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00143\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1String__Struct}{String\_Struct}}<std::basic\_string<T>>\ }
+\DoxyCodeLine{00144\ \ \ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{00149\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00150\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1String}{String}}\ =\ \mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1String__Struct}{String\_Struct<T>::value}};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00153\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Array__Struct}{Array\_Struct}}\ }
+\DoxyCodeLine{00154\ \ \ :\ std::false\_type\ \{\};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ std::u\textcolor{keywordtype}{int}64\_t\ S>}
+\DoxyCodeLine{00157\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Array__Struct}{Array\_Struct}}<std::array<T,\ S>>\ }
+\DoxyCodeLine{00158\ \ \ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{00163\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00164\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1Array}{Array}}\ =\ \mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Array__Struct}{Array\_Struct<T>::value}};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00167\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Span__Struct}{Span\_Struct}}\ }
+\DoxyCodeLine{00168\ \ \ :\ std::false\_type\ \{\};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00171\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Span__Struct}{Span\_Struct}}<std::span<T>>}
+\DoxyCodeLine{00172\ \ \ :\ std::true\_type\ \{\};}
+\DoxyCodeLine{00177\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00178\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1Span}{Span}}\ =\ \mbox{\hyperlink{structFile_1_1Detail_1_1Concept_1_1Span__Struct}{Span\_Struct<T>::value}};}
+\DoxyCodeLine{00183\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00184\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1Iterable}{Iterable}}\ =\ }
+\DoxyCodeLine{00185\ \ \ Vector\ <T>\ ||\ }
+\DoxyCodeLine{00186\ \ \ String\ <T>\ ||\ }
+\DoxyCodeLine{00187\ \ \ Array\ \ <T>\ ||\ }
+\DoxyCodeLine{00188\ \ \ Span\ \ \ <T>;}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00191\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasTarget}{HasTarget}}\ =\ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{00192\ \ \ \textcolor{keyword}{typename}\ T::Target;}
+\DoxyCodeLine{00193\ \};}
+\DoxyCodeLine{00194\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00195\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasUsedEndian}{HasUsedEndian}}\ =\ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{00196\ \ \ T::UsedEndian;}
+\DoxyCodeLine{00197\ \};}
+\DoxyCodeLine{00198\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00199\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1SerialiserHasConstructor}{SerialiserHasConstructor}}\ =\ }
+\DoxyCodeLine{00200\ \ \ HasTarget\ \ \ \ \ <T>\ \&\&\ }
+\DoxyCodeLine{00201\ \ \ HasUsedEndian\ <T>\ \&\&}
+\DoxyCodeLine{00202\ \ \ \textcolor{keyword}{requires}(\textcolor{keyword}{const}\ T::Target\ \&target,\ \mbox{\hyperlink{classFile_1_1Stream}{Stream<T::UsedEndian>}}\ \&stream)\ \{}
+\DoxyCodeLine{00203\ \ \ \ \ T(target,\ stream);}
+\DoxyCodeLine{00204\ \ \ \};}
+\DoxyCodeLine{00205\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00206\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasFunctionOperator}{HasFunctionOperator}}\ =\ \textcolor{keyword}{requires}(T\ input,\ A...\ args)\ \{}
+\DoxyCodeLine{00207\ \ \ \{\ input(args...)\ \}\ -\/>\ std::same\_as<void>;}
+\DoxyCodeLine{00208\ \};}
+\DoxyCodeLine{00209\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00210\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1SerialiserImpl}{SerialiserImpl}}\ =\ }
+\DoxyCodeLine{00211\ \ \ SerialiserHasConstructor\ <T>\ \&\&}
+\DoxyCodeLine{00212\ \ \ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasFunctionOperator}{HasFunctionOperator}}\ \ \ \ \ \ <T,\ A...>;}
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00214\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ E,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00215\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasInternalSerialiserImpl}{HasInternalSerialiserImpl}}\ =\ \textcolor{keyword}{requires}\ \{\ }
+\DoxyCodeLine{00216\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1SerialiserImpl}{SerialiserImpl<typename\ T::template\ Serialiser<E>}},\ A...>;}
+\DoxyCodeLine{00217\ \};}
+\DoxyCodeLine{00218\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ E,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00219\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasExternalSerialiserImpl}{HasExternalSerialiserImpl}}\ =\ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{00220\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1SerialiserImpl}{SerialiserImpl<Serialiser<T,\ E>}},\ A...>;}
+\DoxyCodeLine{00221\ \};}
+\DoxyCodeLine{00222\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00223\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1DeserialiserHasConstructor}{DeserialiserHasConstructor}}\ =\ }
+\DoxyCodeLine{00224\ \ \ HasTarget\ \ \ \ \ <T>\ \&\&\ }
+\DoxyCodeLine{00225\ \ \ HasUsedEndian\ <T>\ \&\&\ }
+\DoxyCodeLine{00226\ \ \ \textcolor{keyword}{requires}(T::Target\ \&target,\ \mbox{\hyperlink{classFile_1_1Stream}{Stream<T::UsedEndian>}}\ \&stream)\ \{}
+\DoxyCodeLine{00227\ \ \ \ \ T(target,\ stream);\ }
+\DoxyCodeLine{00228\ \ \ \};}
+\DoxyCodeLine{00229\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00230\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1DeserialiserImpl}{DeserialiserImpl}}\ =\ }
+\DoxyCodeLine{00231\ \ \ DeserialiserHasConstructor\ <T>\ \&\&\ }
+\DoxyCodeLine{00232\ \ \ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasFunctionOperator}{HasFunctionOperator}}\ \ \ \ \ \ \ \ <T,\ A...>;}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00234\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ E,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00235\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasInternalDeserialiserImpl}{HasInternalDeserialiserImpl}}\ =\ \textcolor{keyword}{requires}\ \{\ }
+\DoxyCodeLine{00236\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1DeserialiserImpl}{DeserialiserImpl<typename\ T::template\ Deserialiser<E>}},\ A...>;}
+\DoxyCodeLine{00237\ \};}
+\DoxyCodeLine{00238\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ E,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00239\ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasExternalDeserialiserImpl}{HasExternalDeserialiserImpl}}\ =\ \textcolor{keyword}{requires}\ \{}
+\DoxyCodeLine{00240\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1DeserialiserImpl}{DeserialiserImpl<Deserialiser<T,\ E>}},\ A...>;}
+\DoxyCodeLine{00241\ \};}
+\DoxyCodeLine{00242\ \};}
+\DoxyCodeLine{00243\ \};}
+\DoxyCodeLine{00244\ \textcolor{keyword}{template}\ <Endian\ E\ =\ Endian::Native>\ }
+\DoxyCodeLine{00245\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classFile_1_1Stream_a2ae56a895d6e91c9e40fea8af3d3a789}{Stream}}\ \{}
+\DoxyCodeLine{00246\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00250\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8d}{Endian}}\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}}\ =\ E;}
+\DoxyCodeLine{00256\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classFile_1_1Stream_a2ae56a895d6e91c9e40fea8af3d3a789}{Stream}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00262\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classFile_1_1Stream_a27c67ca23d14794ce2d091ff99112c82}{Stream}}(\mbox{\hyperlink{namespaceFile_aaa657f08e5829038ef1ecca83936eb67}{ByteSequence}}\ data)\ :\ data\_(std::make\_shared<\mbox{\hyperlink{namespaceFile_aaa657f08e5829038ef1ecca83936eb67}{ByteSequence}}>(std::move(data)))\ \{\}}
+\DoxyCodeLine{00270\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classFile_1_1Stream_a8208cd5ce51395388ee51725b35650df}{Stream}}(}
+\DoxyCodeLine{00271\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&filename}
+\DoxyCodeLine{00272\ \ \ )\ :\ data\_(new\ \mbox{\hyperlink{namespaceFile_aaa657f08e5829038ef1ecca83936eb67}{ByteSequence}}(std::move(\mbox{\hyperlink{namespaceFile}{File}}::\mbox{\hyperlink{classFile_1_1Stream_a3ff83d551519265b23d953df8032b8eb}{Read}}(filename))))\ \{\}}
+\DoxyCodeLine{00323\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00324\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasInternalDeserialiserImpl}{Detail::Concept::HasInternalDeserialiserImpl}}<T,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ A...>\ ||\ }
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasExternalDeserialiserImpl}{Detail::Concept::HasExternalDeserialiserImpl}}<T,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ A...>}
+\DoxyCodeLine{00326\ \ \ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{classFile_1_1Stream_a3ff83d551519265b23d953df8032b8eb}{Read}}(A\&\&...\ args)\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classFile_1_1Stream_a6447dbb7e92159a11dae90b639caa020}{Read}}(T(),\ std::forward<A>(args)...);}
+\DoxyCodeLine{00328\ \ \ \}}
+\DoxyCodeLine{00337\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Simple\ Simple>\ }
+\DoxyCodeLine{00338\ \ \ \textcolor{keyword}{inline}\ Simple\ \mbox{\hyperlink{classFile_1_1Stream_a6447dbb7e92159a11dae90b639caa020}{Read}}()\ \{}
+\DoxyCodeLine{00339\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::ranges::distance(current\_,\ data\_-\/>end())\ <\ \textcolor{keyword}{sizeof}(Simple))\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{structFile_1_1StreamReadFailure}{StreamReadFailure}}(\textcolor{stringliteral}{"{}Insufficient\ data"{}});}
+\DoxyCodeLine{00341\ \ \ \ \ \}}
+\DoxyCodeLine{00342\ \ \ \ \ Simple\ simple;}
+\DoxyCodeLine{00343\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}}\ !=\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8da925641e0b76c28cc940e8f3ca178d826}{Endian::Native}})\ \{}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ std::ranges::reverse\_copy(}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ std::span(current\_,\ \textcolor{keyword}{sizeof}(Simple)),\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{namespaceFile_ae0165bddbfc987f33baa2bb72a4ccaab}{Byte}}\ *\textcolor{keyword}{>}(\&simple)}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00347\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ std::ranges::copy(}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ std::span(current\_,\ \textcolor{keyword}{sizeof}(simple)),\ \textcolor{keyword}{reinterpret\_cast<}\mbox{\hyperlink{namespaceFile_ae0165bddbfc987f33baa2bb72a4ccaab}{Byte}}\ *\textcolor{keyword}{>}(\&simple)}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ );}
+\DoxyCodeLine{00351\ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ current\_\ =\ std::ranges::next(current\_,\ \textcolor{keyword}{sizeof}(simple));}
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keywordflow}{return}\ simple;}
+\DoxyCodeLine{00354\ \ \ \}}
+\DoxyCodeLine{00364\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Iterable\ Iterable>}
+\DoxyCodeLine{00365\ \ \ \textcolor{keyword}{inline}\ Iterable\ \mbox{\hyperlink{classFile_1_1Stream_aafbea46de84b9ab3822d0c1246ba2623}{Read}}(Iterable\ \&\&iterable)\ \{}
+\DoxyCodeLine{00366\ \ \ \ \ \textcolor{keyword}{static\_assert}(}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1Simple}{Detail::Concept::Simple<std::ranges::range\_value\_t<Iterable>}}>,}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Elements\ of\ Iterable\ must\ satisfy\ Detail::Concept::Simple"{}}}
+\DoxyCodeLine{00369\ \ \ \ \ );}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ \&element\ :\ iterable)\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ element\ =\ \mbox{\hyperlink{classFile_1_1Stream_a3ff83d551519265b23d953df8032b8eb}{Read<std::ranges::range\_value\_t<Iterable>}}>();}
+\DoxyCodeLine{00372\ \ \ \ \ \}}
+\DoxyCodeLine{00373\ \ \ \ \ \textcolor{keywordflow}{return}\ std::forward<Iterable>(iterable);}
+\DoxyCodeLine{00374\ \ \ \}}
+\DoxyCodeLine{00382\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::String\ String>}
+\DoxyCodeLine{00383\ \ \ \textcolor{keyword}{inline}\ String\ \mbox{\hyperlink{classFile_1_1Stream_a623f867e1663398244e3262dcae808e6}{Read}}(std::uint64\_t\ length)\ \{}
+\DoxyCodeLine{00384\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classFile_1_1Stream_a6447dbb7e92159a11dae90b639caa020}{Read}}(String(length,\ 0));}
+\DoxyCodeLine{00385\ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Vector\ Vector>}
+\DoxyCodeLine{00394\ \ \ \textcolor{keyword}{inline}\ Vector\ \mbox{\hyperlink{classFile_1_1Stream_ab026dca918f00ac9e6d6f3aa7e63d068}{Read}}(std::uint64\_t\ length)\ \{}
+\DoxyCodeLine{00395\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classFile_1_1Stream_a6447dbb7e92159a11dae90b639caa020}{Read}}(Vector(length));}
+\DoxyCodeLine{00396\ \ \ \}}
+\DoxyCodeLine{00403\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Array\ Array>\ }
+\DoxyCodeLine{00404\ \ \ \textcolor{keyword}{inline}\ Array\ \mbox{\hyperlink{classFile_1_1Stream_a93e767e6801ac025ebcf85dce6c500e1}{Read}}()\ \{}
+\DoxyCodeLine{00405\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classFile_1_1Stream_a6447dbb7e92159a11dae90b639caa020}{Read}}(Array());}
+\DoxyCodeLine{00406\ \ \ \}}
+\DoxyCodeLine{00413\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Span\ Span>\ }
+\DoxyCodeLine{00414\ \ \ \textcolor{keyword}{requires}\ std::same\_as<Span,\ ByteSpan>}
+\DoxyCodeLine{00415\ \ \ \textcolor{keyword}{inline}\ Span\ \mbox{\hyperlink{classFile_1_1Stream_a34586a620f4dc9290c641dbc230dff72}{Read}}(std::uint64\_t\ length)\ \{}
+\DoxyCodeLine{00416\ \ \ \ \ \textcolor{keywordflow}{return}\ Span(current\_,\ length);}
+\DoxyCodeLine{00417\ \ \ \}}
+\DoxyCodeLine{00424\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Simple\ Simple>}
+\DoxyCodeLine{00425\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFile_1_1Stream_ad82d3b2fdf0c0b49c942a9040dfafe23}{Write}}(\textcolor{keyword}{const}\ Simple\ \&simple)\ \{}
+\DoxyCodeLine{00426\ \ \ \ \ current\_\ =\ std::ranges::next(}
+\DoxyCodeLine{00427\ \ \ \ \ \ \ data\_-\/>begin(),\ UpdateData<Simple>()}
+\DoxyCodeLine{00428\ \ \ \ \ );}
+\DoxyCodeLine{00429\ \ \ \ \ \textcolor{keywordflow}{if}\ \textcolor{keyword}{constexpr}\ (\mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}}\ !=\ \mbox{\hyperlink{namespaceFile_aef8a42b3ab2cd380273518b701b15e8da925641e0b76c28cc940e8f3ca178d826}{Endian::Native}})\ \{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ current\_\ =\ std::ranges::reverse\_copy(}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ std::span(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{namespaceFile_ae0165bddbfc987f33baa2bb72a4ccaab}{Byte}}\ *\textcolor{keyword}{>}(\&simple),\ \textcolor{keyword}{sizeof}(Simple)),\ current\_}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ ).out;}
+\DoxyCodeLine{00433\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ current\_\ =\ std::ranges::copy(}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ std::span(\textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\mbox{\hyperlink{namespaceFile_ae0165bddbfc987f33baa2bb72a4ccaab}{Byte}}\ *\textcolor{keyword}{>}(\&simple),\ \textcolor{keyword}{sizeof}(Simple)),\ current\_}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ ).out;}
+\DoxyCodeLine{00437\ \ \ \ \ \}}
+\DoxyCodeLine{00438\ \ \ \}}
+\DoxyCodeLine{00447\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Iterable\ Iterable>}
+\DoxyCodeLine{00448\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFile_1_1Stream_a4ca26708a076df559a225ad75c6be55b}{Write}}(\textcolor{keyword}{const}\ Iterable\ \&iterable)\ \{}
+\DoxyCodeLine{00449\ \ \ \ \ \textcolor{keyword}{static\_assert}(}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1Simple}{Detail::Concept::Simple<std::ranges::range\_value\_t<Iterable>}}>,}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \textcolor{stringliteral}{"{}Elements\ of\ Iterable\ must\ satisfy\ Detail::Concept::Simple"{}}}
+\DoxyCodeLine{00452\ \ \ \ \ );}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ \&element\ :\ iterable)\ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \mbox{\hyperlink{classFile_1_1Stream_ad82d3b2fdf0c0b49c942a9040dfafe23}{Write}}(element);}
+\DoxyCodeLine{00455\ \ \ \ \ \}}
+\DoxyCodeLine{00456\ \ \ \}}
+\DoxyCodeLine{00501\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Input,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00502\ \ \ \textcolor{keyword}{requires}\ (\mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasInternalSerialiserImpl}{Detail::Concept::HasInternalSerialiserImpl}}<Input,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ Args...>\ ||\ }
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasExternalSerialiserImpl}{Detail::Concept::HasExternalSerialiserImpl}}<Input,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ Args...>)}
+\DoxyCodeLine{00504\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFile_1_1Stream_af4606e1b80626ec09a9d9631aff6f077}{Write}}(\textcolor{keyword}{const}\ Input\ \&input,\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \mbox{\hyperlink{classFile_1_1Stream_ad82d3b2fdf0c0b49c942a9040dfafe23}{Write}}(input);}
+\DoxyCodeLine{00506\ \ \ \}}
+\DoxyCodeLine{00512\ \ \ std::uint64\_t\ \mbox{\hyperlink{classFile_1_1Stream_a7a8c16424d8dbccaa5930761a5a79bd3}{Tell}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00513\ \ \ \ \ \textcolor{keywordflow}{return}\ std::ranges::distance(}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ data\_-\/>begin(),\ current\_}
+\DoxyCodeLine{00515\ \ \ \ \ );\ }
+\DoxyCodeLine{00516\ \ \ \}}
+\DoxyCodeLine{00528\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFile_1_1Stream_aa01093d0084e953531e9454381d1b60c}{Reserve}}(std::uint64\_t\ input)\ \{}
+\DoxyCodeLine{00529\ \ \ \ \ std::uint64\_t\ offset\ =\ std::ranges::distance(}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ data\_-\/>begin(),\ current\_}
+\DoxyCodeLine{00531\ \ \ \ \ );}
+\DoxyCodeLine{00532\ \ \ \ \ data\_-\/>reserve(input);}
+\DoxyCodeLine{00533\ \ \ \ \ current\_\ =\ std::ranges::next(}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ data\_-\/>begin(),\ offset}
+\DoxyCodeLine{00535\ \ \ \ \ );}
+\DoxyCodeLine{00536\ \ \ \}}
+\DoxyCodeLine{00537\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFile_1_1Stream_ab2fee215a8c3bf043e9f978b3d9efc92}{Seek}}(std::uint64\_t\ offset)\ \{}
+\DoxyCodeLine{00538\ \ \ \ \ current\_\ =\ std::ranges::next(}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ current\_,\ offset,\ data\_-\/>end()}
+\DoxyCodeLine{00540\ \ \ \ \ );}
+\DoxyCodeLine{00541\ \ \ \}}
+\DoxyCodeLine{00547\ \ \ std::uint64\_t\ \mbox{\hyperlink{classFile_1_1Stream_a77d971a6a2418708ac79d1864ba1bff5}{Length}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00548\ \ \ \ \ \textcolor{keywordflow}{return}\ data\_-\/>size();}
+\DoxyCodeLine{00549\ \ \ \}}
+\DoxyCodeLine{00550\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00551\ \ \ std::shared\_ptr<ByteSequence>\ data\_\ =\ std::make\_shared<ByteSequence>();}
+\DoxyCodeLine{00552\ \ \ ByteSequence::iterator\ current\_\ =\ data\_-\/>begin();}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00555\ \ \ \textcolor{keyword}{requires}\ \mbox{\hyperlink{conceptFile_1_1Detail_1_1Concept_1_1HasInternalDeserialiserImpl}{Detail::Concept::HasInternalDeserialiserImpl}}<T,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ A...>\ }
+\DoxyCodeLine{00556\ \ \ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{classFile_1_1Stream_a6447dbb7e92159a11dae90b639caa020}{Read}}(T\ \&\&output,\ A\&\&...\ args)\ \{}
+\DoxyCodeLine{00557\ \ \ \ \ T::template\ \mbox{\hyperlink{structFile_1_1Deserialiser}{Deserialiser<UsedEndian>}}(}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ output,\ *\textcolor{keyword}{this}}
+\DoxyCodeLine{00559\ \ \ \ \ )(std::forward<A>(args)...);}
+\DoxyCodeLine{00560\ \ \ \ \ \textcolor{keywordflow}{return}\ std::forward<T>(output);}
+\DoxyCodeLine{00561\ \ \ \}}
+\DoxyCodeLine{00562\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T,\ \textcolor{keyword}{typename}...\ A>}
+\DoxyCodeLine{00563\ \ \ \textcolor{keyword}{requires}\ Detail::Concept::HasExternalDeserialiserImpl<T,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ A...>}
+\DoxyCodeLine{00564\ \ \ \textcolor{keyword}{inline}\ T\ \mbox{\hyperlink{classFile_1_1Stream_a6447dbb7e92159a11dae90b639caa020}{Read}}(T\ \&\&output,\ A\&\&...\ args)\ \{}
+\DoxyCodeLine{00565\ \ \ \ \ Deserialiser<T,\ UsedEndian>(}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ output,\ *\textcolor{keyword}{this}}
+\DoxyCodeLine{00567\ \ \ \ \ )(std::forward<A>(args)...);}
+\DoxyCodeLine{00568\ \ \ \ \ \textcolor{keywordflow}{return}\ std::forward<T>(output);}
+\DoxyCodeLine{00569\ \ \ \}}
+\DoxyCodeLine{00570\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Input,\ \textcolor{keyword}{typename}...\ Args>}
+\DoxyCodeLine{00571\ \ \ \textcolor{keyword}{requires}\ Detail::Concept::HasInternalSerialiserImpl<Input,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ Args...>}
+\DoxyCodeLine{00572\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFile_1_1Stream_ad82d3b2fdf0c0b49c942a9040dfafe23}{Write}}(\textcolor{keyword}{const}\ Input\ \&input,\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{00573\ \ \ \ \ Input::template\ Serialiser<UsedEndian>(}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ input,\ *\textcolor{keyword}{this}}
+\DoxyCodeLine{00575\ \ \ \ \ )(std::forward<Args>(args)...);}
+\DoxyCodeLine{00576\ \ \ \}}
+\DoxyCodeLine{00577\ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ Input,\ \textcolor{keyword}{typename}...\ Args>\ }
+\DoxyCodeLine{00578\ \ \ \textcolor{keyword}{requires}\ Detail::Concept::HasExternalSerialiserImpl<Input,\ \mbox{\hyperlink{classFile_1_1Stream_acde58f4d92fc8bd8661b6bb015276ee7}{UsedEndian}},\ Args...>}
+\DoxyCodeLine{00579\ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classFile_1_1Stream_ad82d3b2fdf0c0b49c942a9040dfafe23}{Write}}(\textcolor{keyword}{const}\ Input\ \&input,\ Args\&\&...\ args)\ \{}
+\DoxyCodeLine{00580\ \ \ \ \ Serialiser<Input,\ UsedEndian>(}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ input,\ *\textcolor{keyword}{this}}
+\DoxyCodeLine{00582\ \ \ \ \ )(std::forward<Args>(args)...);}
+\DoxyCodeLine{00583\ \ \ \}}
+\DoxyCodeLine{00584\ \ \ \textcolor{keyword}{template}\ <Detail::Concept::Simple\ Simple>}
+\DoxyCodeLine{00585\ \ \ std::uint64\_t\ UpdateData()\ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \textcolor{keyword}{auto}\ offset\ =\ std::ranges::distance(}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ data\_-\/>begin(),\ current\_}
+\DoxyCodeLine{00588\ \ \ \ \ );}
+\DoxyCodeLine{00589\ \ \ \ \ \textcolor{keywordflow}{if}\ (std::ranges::distance(current\_,\ data\_-\/>end())\ <\ \textcolor{keyword}{sizeof}(Simple))\ \{}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ data\_-\/>resize(\mbox{\hyperlink{classFile_1_1Stream_a77d971a6a2418708ac79d1864ba1bff5}{Length}}()\ +\ \textcolor{keyword}{sizeof}(Simple));}
+\DoxyCodeLine{00591\ \ \ \ \ \}}
+\DoxyCodeLine{00592\ \ \ \ \ \textcolor{keywordflow}{return}\ offset;}
+\DoxyCodeLine{00593\ \ \ \}}
+\DoxyCodeLine{00594\ \};}
+\DoxyCodeLine{00595\ \};}
+\DoxyCodeLine{00596\ }
+
+\end{DoxyCode}

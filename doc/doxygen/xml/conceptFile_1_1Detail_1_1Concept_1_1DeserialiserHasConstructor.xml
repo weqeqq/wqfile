@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="conceptFile_1_1Detail_1_1Concept_1_1DeserialiserHasConstructor" kind="concept">
+    <compoundname>File::Detail::Concept::DeserialiserHasConstructor</compoundname>
+    <includes refid="stream_8h" local="no">stream.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename T&gt;
+concept <ref refid="conceptFile_1_1Detail_1_1Concept_1_1DeserialiserHasConstructor" kindref="compound">File::Detail::Concept::DeserialiserHasConstructor</ref> =  
+  HasTarget     &lt;T&gt; &amp;&amp; 
+  HasUsedEndian &lt;T&gt; &amp;&amp; 
+  requires(T::Target &amp;target, Stream&lt;T::UsedEndian&gt; &amp;stream) {
+    T(target, stream); 
+  }    </initializer>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/file/stream.h" line="223" column="1"/>
+  </compounddef>
+</doxygen>

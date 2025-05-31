@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="structFile_1_1ReadError_1_1OpenFailure" kind="struct" language="C++" prot="public">
+    <compoundname>File::ReadError::OpenFailure</compoundname>
+    <basecompoundref refid="classFile_1_1ReadError" prot="public" virt="non-virtual">File::ReadError</basecompoundref>
+    <includes refid="read_8h" local="no">read.h</includes>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="structFile_1_1ReadError_1_1OpenFailure_1a9e15d9af86864220c3725cc4776a3d99" prot="public" static="no" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>File::ReadError::OpenFailure::OpenFailure</definition>
+        <argsstring>(const std::string &amp;message)</argsstring>
+        <name>OpenFailure</name>
+        <qualifiedname>File::ReadError::OpenFailure::OpenFailure</qualifiedname>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/file/read.h" line="26" column="12" bodyfile="include/file/read.h" bodystart="26" bodyend="29"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>Exception::Error</label>
+      </node>
+      <node id="3">
+        <label>File::Error</label>
+        <link refid="classFile_1_1Error"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>File::ReadError</label>
+        <link refid="classFile_1_1ReadError"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>File::ReadError::OpenFailure</label>
+        <link refid="structFile_1_1ReadError_1_1OpenFailure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>Exception::Error</label>
+      </node>
+      <node id="3">
+        <label>File::Error</label>
+        <link refid="classFile_1_1Error"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>File::ReadError</label>
+        <link refid="classFile_1_1ReadError"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>File::ReadError::OpenFailure</label>
+        <link refid="structFile_1_1ReadError_1_1OpenFailure"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/file/read.h" line="25" column="1" bodyfile="include/file/read.h" bodystart="25" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classFile_1_1Error_1af349939934578319f507885d445bc639" prot="protected" virt="non-virtual"><scope>File::ReadError::OpenFailure</scope><name>Error</name></member>
+      <member refid="structFile_1_1ReadError_1_1OpenFailure_1a9e15d9af86864220c3725cc4776a3d99" prot="public" virt="non-virtual"><scope>File::ReadError::OpenFailure</scope><name>OpenFailure</name></member>
+      <member refid="classFile_1_1ReadError_1a77be2ef8990e8cff6beacb600ff9cd56" prot="protected" virt="non-virtual"><scope>File::ReadError::OpenFailure</scope><name>ReadError</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

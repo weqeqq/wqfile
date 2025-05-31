@@ -1,0 +1,168 @@
+
+Full API
+--------
+
+Namespaces
+**********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_Exception.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_File.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_File__Detail.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_File__Detail__Concept.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_std.rst
+
+Classes and Structs
+*******************
+
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1Array__Struct.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1Array__Struct_3_01std_1_1array_3_01T_00_01S_01_4_01_4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1Span__Struct.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1Span__Struct_3_01std_1_1span_3_01T_01_4_01_4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1String__Struct.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1String__Struct_3_01std_1_1basic__string_3_01T_01_4_01_4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1Vector__Struct.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1Detail_1_1Concept_1_1Vector__Struct_3_01std_1_1vector_3_01T_01_4_01_4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1ReadError_1_1OpenFailure.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1ReadError_1_1ReadFailure.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structFile_1_1StreamReadFailure.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   class_structFile_1_1Deserialiser.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classFile_1_1Detail_1_1ReadFunction.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classFile_1_1Error.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classFile_1_1ReadError.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   class_structFile_1_1Serialiser.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classFile_1_1Stream.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classFile_1_1StreamError.rst
+
+Enums
+*****
+
+
+.. toctree::
+   :maxdepth: 5
+
+   enum_namespaceFile_1aef8a42b3ab2cd380273518b701b15e8d.rst
+
+Variables
+*********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   variable_namespaceFile_1ad41b3c50fa291dc63cc956d374029325.rst
+
+Typedefs
+********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceFile_1ae0165bddbfc987f33baa2bb72a4ccaab.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceFile_1aaa657f08e5829038ef1ecca83936eb67.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceFile_1a08f1d1ec3c6e1869bb722ed9eebb52e1.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_namespaceFile_1a61e2697173136ada4e112bade4fbfa77.rst

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="conceptFile_1_1Detail_1_1Concept_1_1Iterable" kind="concept">
+    <compoundname>File::Detail::Concept::Iterable</compoundname>
+    <includes refid="stream_8h" local="no">stream.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;typename T&gt;
+concept <ref refid="conceptFile_1_1Detail_1_1Concept_1_1Iterable" kindref="compound">File::Detail::Concept::Iterable</ref> =  
+  Vector &lt;T&gt; || 
+  String &lt;T&gt; || 
+  Array  &lt;T&gt; || 
+  Span   &lt;T&gt;    </initializer>
+    <briefdescription>
+<para>Concept for iterable types: vectors, strings, arrays, or spans. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/file/stream.h" line="184" column="1"/>
+  </compounddef>
+</doxygen>

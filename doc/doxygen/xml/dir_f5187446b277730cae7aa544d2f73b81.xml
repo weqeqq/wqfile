@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_f5187446b277730cae7aa544d2f73b81" kind="dir">
+    <compoundname>include/file/stream</compoundname>
+    <innerfile refid="deserialiser_8h">deserialiser.h</innerfile>
+    <innerfile refid="serialiser_8h">serialiser.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/file/stream/"/>
+  </compounddef>
+</doxygen>

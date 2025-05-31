@@ -1,0 +1,7 @@
+OUTPUT_DIRECTORY = doc/doxygen 
+INPUT            = include
+
+GENERATE_HTML = NO
+GENERATE_XML  = YES 
+EXTRACT_ALL   = YES
+RECURSIVE     = YES

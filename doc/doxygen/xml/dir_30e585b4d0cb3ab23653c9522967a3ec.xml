@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.13.2" xml:lang="en-US">
+  <compounddef id="dir_30e585b4d0cb3ab23653c9522967a3ec" kind="dir">
+    <compoundname>include/file</compoundname>
+    <innerfile refid="error_8h">error.h</innerfile>
+    <innerfile refid="read_8h">read.h</innerfile>
+    <innerfile refid="stream_8h">stream.h</innerfile>
+    <innerfile refid="type_8h">type.h</innerfile>
+    <innerfile refid="write_8h">write.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/file/"/>
+  </compounddef>
+</doxygen>
