@@ -43,7 +43,6 @@ FetchContent_MakeAvailable(
 target_link_libraries(file PUBLIC
   exception::exception
   iterable::iterable
-  unicode::unicode
 )
 install(
   TARGETS file 
