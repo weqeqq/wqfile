@@ -93,15 +93,18 @@ public:
 class StreamError : public Error {
 protected:
   explicit StreamError(
-    const std::string &message
+    std::string_view message
 
   ) : Error(Namespace("StreamError", message)) {} 
 };
-struct StreamReadFailure : StreamError {
-  explicit StreamReadFailure(
-    const std::string &message 
+namespace StreamErrorMessage {
+class ReadFailure : public StreamError {
+public:
+  explicit ReadFailure(
+    std::string_view message 
 
   ) : StreamError(Message("ReadFailure", message)) {}
+};
 };
 namespace Detail {
 namespace Concept {
@@ -339,7 +342,7 @@ public:
   template <Detail::Concept::Simple Simple> 
   inline Simple Read() {
     if (std::ranges::distance(current_, data_->end()) < sizeof(Simple)) {
-      throw StreamReadFailure("Insufficient data");
+      throw StreamErrorMessage::ReadFailure("Insufficient data");
     }
     Simple simple;
     if constexpr (UsedEndian != Endian::Native) {
@@ -417,7 +420,7 @@ public:
   inline Span Read(std::uint64_t length) {
 
     if (std::ranges::distance(current_, data_->end()) < length) {
-      throw StreamReadFailure("Insufficient data");
+      throw StreamErrorMessage::ReadFailure("Insufficient data");
     }
     auto span = Span(current_, length);
 

@@ -1,14 +1,24 @@
 
 #pragma once
 
-#include <exception/error.h>
+#include <format>
+#include <string_view>
+#include <stdexcept>
 
 namespace File {
-class Error : public Exception::Error {
+class Error : public std::runtime_error {
 protected:
-  explicit Error(
-    const std::string &message
+  explicit Error(std::string_view) : std::runtime_error("") {}
 
-  ) : Exception::Error(Namespace("File", message)) {}
+  static std::string Namespace(
+    std::string_view prefix, std::string_view message
+  ) {
+    return std::format("{}::{}", prefix, message);
+  }
+  static std::string Message(
+    std::string_view prefix, std::string_view message
+  ) {
+    return std::format("{}: {}", prefix, message);
+  }
 };
 };
