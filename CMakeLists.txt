@@ -36,18 +36,10 @@ FetchContent_Declare(
   GIT_TAG        359d3547cc1fada5f82b8a0f2c7b8ef6be671efe
   GIT_PROGRESS   TRUE
 )
-FetchContent_Declare(
-  unicode-project 
-  GIT_REPOSITORY https://github.com/weqeqq/unicode-cpp.git
-  GIT_TAG        26a83df7e10fdd9af77951e225c03abf237109dd
-  GIT_PROGRESS   TRUE
-)
 FetchContent_MakeAvailable(
   exception-project
   iterable-project
-  unicode-project
 )
-
 target_link_libraries(file PUBLIC
   exception::exception
   iterable::iterable
