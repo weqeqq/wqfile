@@ -13,7 +13,6 @@
 #include <type_traits>
 #include <utility>
 #include <vector>
-#include <unicode/type.h>
 #include <memory>
 
 #include <bit>
@@ -64,7 +63,7 @@ public:
   using Target = T; static constexpr Endian UsedEndian = E;
 
   explicit Serialiser(
-    const Target &target, Stream<UsedEndian> &stream
+    const Target &, Stream<UsedEndian> &
   ) {
     static_assert(false, "Serialiser not implemented");
   }
@@ -86,7 +85,7 @@ public:
   using Target = T; static constexpr Endian UsedEndian = E;
 
   explicit Deserialiser(
-    Target &target, Stream<UsedEndian> &stream
+    Target &, Stream<UsedEndian> &
   ) {
     static_assert(false, "Deserialiser not implemented");
   }
@@ -273,7 +272,7 @@ public:
    */
   explicit Stream(
     const std::string &filename
-  ) : data_(new ByteSequence(std::move(File::Read(filename)))) {}
+  ) : data_(new ByteSequence(File::Read(filename))) {}
   /**
    * @brief Deserialises an object from the stream using either internal or external deserialisation.
    *
