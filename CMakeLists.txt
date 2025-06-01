@@ -7,6 +7,8 @@ project(
 add_library(file INTERFACE)
 add_library(file::file ALIAS file)
 
+option(BUILD_TEST "Build tests" OFF)
+
 target_compile_features(file INTERFACE cxx_std_23)
 target_sources(file PUBLIC 
   FILE_SET  HEADERS 
@@ -18,4 +20,6 @@ target_sources(file PUBLIC
   include/file/error.h
   include/file/type.h
 )
+if(BUILD_TEST)
 add_subdirectory(test)
+endif()
