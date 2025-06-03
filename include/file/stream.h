@@ -429,6 +429,20 @@ public:
     );
     return span;
   }
+
+  template <typename T, typename... A>
+  requires Detail::Concept::Simple              <T> ||
+           Detail::Concept::HasDeserialiserImpl <T, UsedEndian>
+  inline T &ReadTo(T &output, A&&... args) {
+    return output = Read<T>(std::forward<A>(args)...);
+  }
+
+  template <typename T> 
+  requires Detail::Concept::Iterable<T>
+  inline T &ReadTo(T &output, std::uint64_t length) {
+    return output = Read<T>(length);
+  }
+
   /**
    * @brief Writes a simple type to the stream.
    *
