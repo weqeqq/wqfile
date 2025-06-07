@@ -15,7 +15,9 @@ target_sources(file PUBLIC
   BASE_DIRS include
   FILES 
   include/file/stream.h
+  include/file/read_string.h
   include/file/read.h 
+  include/file/write_string.h
   include/file/write.h
   include/file/error.h
   include/file/type.h
