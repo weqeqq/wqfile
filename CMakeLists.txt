@@ -4,13 +4,6 @@ project(
   file 
   LANGUAGES CXX VERSION 0.1.0
 )
-if(NOT PROJECT_IS_TOP_LEVEL)
-  if(FILE_IS_POPULATED)
-    return()
-  endif()
-  set(FILE_IS_POPULATED TRUE CACHE INTERNAL "")
-endif()
-
 add_library(file INTERFACE)
 add_library(file::file ALIAS file)
 
