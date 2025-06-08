@@ -25,3 +25,5 @@ target_sources(file PUBLIC
 if(BUILD_TEST)
 add_subdirectory(test)
 endif()
+
+install(TARGETS file FILE_SET HEADERS)
