@@ -26,4 +26,29 @@ if(BUILD_TEST)
 add_subdirectory(test)
 endif()
 
-install(TARGETS file FILE_SET HEADERS)
+install(TARGETS file
+  EXPORT file-targets
+  FILE_SET HEADERS
+  DESTINATION include
+)
+install(EXPORT file-targets
+  NAMESPACE file::
+  DESTINATION lib/cmake/file
+)
+include(CMakePackageConfigHelpers)
+
+write_basic_package_version_file(
+  "${CMAKE_CURRENT_BINARY_DIR}/file-config-version.cmake"
+  VERSION ${PROJECT_VERSION}
+  COMPATIBILITY SameMajorVersion
+)
+configure_package_config_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/file-config.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/file-config.cmake"
+  INSTALL_DESTINATION lib/cmake/file
+)
+install(FILES
+  "${CMAKE_CURRENT_BINARY_DIR}/file-config.cmake"
+  "${CMAKE_CURRENT_BINARY_DIR}/file-config-version.cmake"
+  DESTINATION lib/cmake/file
+)
