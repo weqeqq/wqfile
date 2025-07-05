@@ -7,227 +7,58 @@
   },
   "configurePresets": [
     {
-      "name": "cmake-flags",
-      "hidden": true,
-      "warnings": {
-        "dev": true,
-        "deprecated": true,
-        "uninitialized": false,
-        "unusedCli": true,
-        "systemVars": false
-      },
-      "errors": {
-        "dev": false,
-        "deprecated": false 
-      }
-    },
-    {
-      "name": "linux-debug",
-      "inherits": [
-        "cmake-flags"
-      ],
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Linux"
-      },
+      "name": "debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_C_FLAGS_DEBUG": "-g -Wall -Wextra -Wpedantic -Wformat",
-        "CMAKE_CXX_FLAGS_DEBUG": "-g -Wall -Wextra -Wpedantic -Wformat"
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
       },
-      "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/build/debug"
     },
     {
-      "name": "linux-release",
-      "inherits": [
-        "cmake-flags"
-      ],
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Linux"
-      },
+      "name": "release",
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Release",
-        "CMAKE_C_FLAGS_RELEASE": "-O3",
-        "CMAKE_CXX_FLAGS_RELEASE": "-O3"
+        "CMAKE_BUILD_TYPE": "Release"
       },
-      "generator": "Unix Makefiles",
-      "binaryDir": "${sourceDir}/build/release"
-    },
-    {
-      "name": "windows-debug",
-      "inherits": [
-        "cmake-flags"
-      ],
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Windows"
-      },
-      "generator": "Visual Studio 17 2022",
-      "binaryDir": "${sourceDir}/build/debug"
-    },
-    {
-      "name": "windows-release",
-      "inherits": [
-        "cmake-flags"
-      ],
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Windows"
-      },
-      "generator": "Visual Studio 17 2022",
       "binaryDir": "${sourceDir}/build/release"
     }
   ],
   "buildPresets": [
     {
-      "name": "linux-debug",
+      "name": "debug",
       "configuration": "Debug",
-      "configurePreset": "linux-debug",
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Linux"
-      }
+      "configurePreset": "debug"
     },
     {
-      "name": "linux-release",
+      "name": "release",
       "configuration": "Release",
-      "configurePreset": "linux-release",
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Linux"
-      }
-    },
-    {
-      "name": "windows-debug",
-      "configuration": "Debug",
-      "configurePreset": "windows-debug",
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Windows"
-      }
-    },
-    {
-      "name": "windows-release",
-      "configuration": "Release",
-      "configurePreset": "windows-release",
-      "condition": {
-        "type": "equals",
-        "lhs": "${hostSystemName}",
-        "rhs": "Windows"
-      }
+      "configurePreset": "release"
     }
   ],
-  "testPresets": [
-    {
-      "name": "linux-debug",
-      "configurePreset": "linux-debug",
-      "environment": {
-        "GTEST_COLOR": "1"
-      },
-      "output": {
-        "outputOnFailure": true
-      }
-    },
-    {
-      "name": "linux-release",
-      "configurePreset": "linux-release",
-      "output": {
-        "outputOnFailure": false
-      }
-    },
-    {
-      "name": "windows-debug",
-      "configurePreset": "windows-debug",
-      "environment": {
-        "GTEST_COLOR": "1"
-      },
-      "output": {
-        "outputOnFailure": true
-      }
-    },
-    {
-      "name": "windows-release",
-      "configurePreset": "windows-release",
-      "output": {
-        "outputOnFailure": false
-      }
-    }
-  ],
+  "testPresets": [],
   "workflowPresets": [
     {
-      "name": "linux-debug",
+      "name": "debug",
       "steps": [
         {
           "type": "configure",
-          "name": "linux-debug"
+          "name": "debug"
         },
         {
           "type": "build",
-          "name": "linux-debug"
-        },
-        {
-          "type": "test",
-          "name": "linux-debug"
+          "name": "debug"
         }
       ]
     },
     {
-      "name": "linux-release",
+      "name": "release",
       "steps": [
         {
           "type": "configure",
-          "name": "linux-release"
+          "name": "release"
         },
         {
           "type": "build",
-          "name": "linux-release"
-        },
-        {
-          "type": "test",
-          "name": "linux-release"
-        }
-      ]
-    },
-    {
-      "name": "windows-debug",
-      "steps": [
-        {
-          "type": "configure",
-          "name": "windows-debug"
-        },
-        {
-          "type": "build",
-          "name": "windows-debug"
-        },
-        {
-          "type": "test",
-          "name": "windows-debug"
-        }
-      ]
-    },
-    {
-      "name": "windows-release",
-      "steps": [
-        {
-          "type": "configure",
-          "name": "windows-release"
-        },
-        {
-          "type": "build",
-          "name": "windows-release"
-        },
-        {
-          "type": "test",
-          "name": "windows-release"
+          "name": "release"
         }
       ]
     }
