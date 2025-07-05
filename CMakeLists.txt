@@ -28,6 +28,7 @@ target_sources(file PUBLIC
 add_library(file::file ALIAS file)
 option(FILE_BUILD_TESTS "" ${PROJECT_IS_TOP_LEVEL})
 if (FILE_BUILD_TESTS)
+    message("Building tests for file")
     enable_testing()
     add_subdirectory(tests)
 endif()
