@@ -26,7 +26,7 @@ target_sources(file PUBLIC
         sources/output.cc
 )
 add_library(file::file ALIAS file)
-option(FILE_BUILD_TESTS "" ${PROJECT_IS_TOP_LEVEL})
+option(FILE_BUILD_TESTS "" OFF)
 if (FILE_BUILD_TESTS)
     message("Building tests for file")
     enable_testing()
