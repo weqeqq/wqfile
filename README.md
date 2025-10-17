@@ -1,6 +1,6 @@
-# file-cpp: Simple and Safe C++ File I/O
+# wqfile: Simple and Safe C++ File I/O
 
-`file-cpp` is a single-header C++ library that provides a set of convenient functions for simple and safe file I/O operations. It aims to simplify common file operations like reading and writing entire files, while ensuring robustness through an exception-based error handling mechanism. The API is designed to be clean and modern, using callable function objects for its core functionalities.
+`wqfile` is a single-header C++ library that provides a set of convenient functions for simple and safe file I/O operations. It aims to simplify common file operations like reading and writing entire files, while ensuring robustness through an exception-based error handling mechanism. The API is designed to be clean and modern, using callable function objects for its core functionalities.
 
 ## Features
 
@@ -14,23 +14,22 @@
 
 ## Requirements
 
-- C++20 or later (the library uses `std::format`).
-- A C++20 compliant compiler (e.g., GCC 11+, Clang 12+, MSVC v19.29+).
+- A C++17 compliant compiler (e.g., GCC 7+, Clang 5+, MSVC v19.14+).
 
 ## Integration
 
-`file-cpp` is a header-only library. To use it, simply copy the `file-cpp/` directory into your project's include path and include the main header:
+`wqfile` is a header-only library. To use it, simply copy the `wqfile/` directory into your project's include path and include the main header:
 
 ```cpp
-#include <file-cpp/file.h>
+#include <wqfile/file.h>
 ```
 
 ## Usage
 
-Here's a quick example demonstrating how to write to and read from a file using `file-cpp`.
+Here's a quick example demonstrating how to write to and read from a file using `wqfile`.
 
 ```cpp
-#include <file-cpp/file.h>
+#include <wqfile/file.h>
 #include <iostream>
 #include <vector>
 

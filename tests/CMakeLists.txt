@@ -1,6 +1,6 @@
 
-add_executable(FileCppTests)
-target_sources(FileCppTests
+add_executable(FileTests)
+target_sources(FileTests
   PRIVATE
     sources/file.cc
 )
@@ -12,10 +12,10 @@ FetchContent_Declare(
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-target_link_libraries(FileCppTests
+target_link_libraries(FileTests
     PRIVATE
-        FileCpp
+        File::File
         GTest::gtest_main
 )
 include(GoogleTest)
-gtest_discover_tests(FileCppTests)
+gtest_discover_tests(FileTests)

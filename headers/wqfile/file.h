@@ -1,9 +1,9 @@
 /**
- * @mainpage file-cpp: Simple and Safe C++ File I/O
+ * @mainpage wqfile: Simple and Safe C++ File I/O
  *
  * @section intro_sec Introduction
  *
- * `file-cpp` is a single-header C++ library that provides a set of convenient
+ * `wqfile` is a single-header C++ library that provides a set of convenient
  * functions for simple and safe file I/O operations. It aims to simplify
  * common file operations like reading and writing entire files, while ensuring
  * robustness through an exception-based error handling mechanism. The API is
@@ -24,10 +24,10 @@
  * @section usage_sec Example Usage
  *
  * Here's a quick example demonstrating how to write to and read from a file
- * using `file-cpp`.
+ * using `wqfile`.
  *
  * @code
- * #include <file-cpp/file.h>
+ * #include <wqfile/file.h>
  * #include <iostream>
  * #include <vector>
  *
@@ -83,7 +83,7 @@
  *
  * Example Usage:
  * @code
- * #include <file-cpp/file.h>
+ * #include <wqfile/file.h>
  * #include <iostream>
  *
  * int main() {
@@ -113,7 +113,6 @@
 #pragma once
 
 #include <filesystem>
-#include <format>
 #include <fstream>
 #include <stdexcept>
 #include <string>
@@ -155,22 +154,21 @@ struct ReadBinaryFn {
   std::vector<unsigned char>
   operator()(const std::filesystem::path &path) const {
     if (!std::filesystem::exists(path)) {
-      throw ReadError(std::format("File ({}) does not exists", path.string()));
+      throw ReadError("File (" + path.string() + ") does not exists");
     }
     if (!std::filesystem::is_regular_file(path)) {
-      throw ReadError(
-          std::format("Path ({}) is not a regular file", path.string()));
+      throw ReadError("Path (" + path.string() + ") is not a regular file");
     }
     std::ifstream file(path, std::ios::binary | std::ios::ate);
     if (!file) {
-      throw ReadError(std::format("Failed to open file ({})", path.string()));
+      throw ReadError("Failed to open file (" + path.string() + ")");
     }
     auto length = file.tellg();
     file.seekg(0, std::ios::beg);
 
     std::vector<unsigned char> buffer(length);
     if (!file.read(reinterpret_cast<char *>(buffer.data()), length)) {
-      throw ReadError(std::format("Failed to read file ({})", path.string()));
+      throw ReadError("Failed to read file (" + path.string() + ")");
     }
     return buffer;
   }
@@ -218,13 +216,12 @@ struct WriteBinaryFn {
                   const std::vector<unsigned char> &data) const {
     std::ofstream file(path, std::ios::binary);
     if (!file) {
-      throw WriteError(
-          std::format("Failed to open file for writing ({})", path.string()));
+      throw WriteError("Failed to open file for writing (" + path.string() +
+                       ")");
     }
     file.write(reinterpret_cast<const char *>(data.data()), data.size());
     if (!file) {
-      throw WriteError(
-          std::format("Failed to write to file ({})", path.string()));
+      throw WriteError("Failed to write to file (" + path.string() + ")");
     }
   }
 };
@@ -250,13 +247,12 @@ struct WriteStringFn {
                   const std::string &data) const {
     std::ofstream file(path);
     if (!file) {
-      throw WriteError(
-          std::format("Failed to open file for writing ({})", path.string()));
+      throw WriteError("Failed to open file for writing (" + path.string() +
+                       ")");
     }
     file << data;
     if (!file) {
-      throw WriteError(
-          std::format("Failed to write to file ({})", path.string()));
+      throw WriteError("Failed to write to file (" + path.string() + ")");
     }
   }
 };
